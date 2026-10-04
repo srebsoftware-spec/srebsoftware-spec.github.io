@@ -67,12 +67,63 @@
     .stat b{display:block;font-size:1.55rem;color:var(--gold2);line-height:1.2}
     .stat small{color:#A7F3D0;font-size:.82rem}
 
-    /* Hero Phones - Balanced cluster with zero overflow */
-    .hero-phones{position:relative;display:flex;justify-content:center;align-items:center;height:520px;width:100%;max-width:520px;margin-inline:auto}
-    .phone{border-radius:36px;border:7px solid #0b1220;box-shadow:0 28px 60px rgba(0,0,0,.45);overflow:hidden;background:#000;transform-origin:center bottom}
-    .phone img{width:100%;height:auto;display:block}
+    /* Realistic Smartphone Mockups */
+    .hero-phones{position:relative;display:flex;justify-content:center;align-items:center;height:530px;width:100%;max-width:520px;margin-inline:auto}
+    .phone{
+      position:relative;
+      border-radius:42px;
+      background:#0B0F19;
+      border:8px solid #1E293B;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.18),
+        inset 0 0 0 1.5px rgba(0,0,0,.85),
+        0 30px 70px -10px rgba(0,0,0,.65),
+        0 12px 24px -6px rgba(0,0,0,.4);
+      overflow:hidden;
+      transform-origin:center bottom;
+    }
+    /* Dynamic Island (punch-hole pill) */
+    .phone::before{
+      content:"";
+      position:absolute;
+      top:10px;
+      left:50%;
+      transform:translateX(-50%);
+      width:70px;
+      height:18px;
+      background:#000;
+      border-radius:999px;
+      z-index:10;
+      box-shadow:0 1px 3px rgba(0,0,0,.6), inset 0 0 0 1px rgba(255,255,255,.08);
+    }
+    /* Glass Specular Glare Sheen */
+    .phone::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg, rgba(255,255,255,.16) 0%, rgba(255,255,255,.03) 36%, transparent 52%);
+      pointer-events:none;
+      z-index:8;
+      border-radius:34px;
+    }
+    .phone img{width:100%;height:auto;display:block;border-radius:34px}
+
     .phone.main{width:250px;position:relative;z-index:3;animation:float 6s ease-in-out infinite}
-    .phone.side{width:185px;position:absolute;bottom:14px;z-index:1;opacity:.94;filter:brightness(0.92);transition:transform .3s ease,opacity .3s ease}
+    
+    .phone.side{
+      width:185px;
+      position:absolute;
+      bottom:14px;
+      z-index:1;
+      opacity:.94;
+      filter:brightness(0.92);
+      transition:transform .3s ease,opacity .3s ease;
+      border-radius:36px;
+      border-width:7px;
+    }
+    .phone.side::before{width:54px;height:14px;top:8px}
+    .phone.side::after{border-radius:28px}
+    .phone.side img{border-radius:28px}
     .phone.l{left:18px;transform:rotate(-8deg) translateY(12px)}
     .phone.r{right:18px;transform:rotate(8deg) translateY(12px)}
     [dir=rtl] .phone.l{left:auto;right:18px;transform:rotate(8deg) translateY(12px)}
@@ -93,9 +144,46 @@
     .card p{color:var(--muted);font-size:.93rem}
 
     .shots{background:linear-gradient(180deg,var(--em0),var(--bg))}
-    .gallery{display:flex;gap:20px;overflow-x:auto;padding:14px max(4vw,20px) 30px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+    .gallery{display:flex;gap:22px;overflow-x:auto;padding:14px max(4vw,20px) 34px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
     .gallery figure{flex:0 0 auto;width:230px;scroll-snap-align:center;text-align:center}
-    .gallery img{border-radius:26px;border:6px solid #0b1220;box-shadow:0 18px 40px rgba(0,0,0,.2);width:100%;height:auto}
+    .gallery .mockup{
+      position:relative;
+      border-radius:36px;
+      background:#0B0F19;
+      border:7px solid #1E293B;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.16),
+        0 22px 48px -6px rgba(0,0,0,.28);
+      overflow:hidden;
+      transition:transform .25s ease,box-shadow .25s ease;
+    }
+    .gallery .mockup:hover{
+      transform:translateY(-6px);
+      box-shadow:0 0 0 1px rgba(16,185,129,.4), 0 28px 55px rgba(2,44,34,.35);
+    }
+    .gallery .mockup::before{
+      content:"";
+      position:absolute;
+      top:8px;
+      left:50%;
+      transform:translateX(-50%);
+      width:56px;
+      height:14px;
+      background:#000;
+      border-radius:999px;
+      z-index:5;
+      box-shadow:0 1px 2px rgba(0,0,0,.5), inset 0 0 0 1px rgba(255,255,255,.08);
+    }
+    .gallery .mockup::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg, rgba(255,255,255,.16) 0%, rgba(255,255,255,.03) 36%, transparent 50%);
+      pointer-events:none;
+      z-index:4;
+      border-radius:28px;
+    }
+    .gallery img{width:100%;height:auto;display:block;border-radius:28px}
     .gallery figcaption{margin-top:14px;font-weight:700;color:var(--em8);font-size:.95rem}
 
     .langs{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
@@ -123,8 +211,10 @@
       .lead{margin-inline:auto}
       .cta,.stats{justify-content:center}
       .hero-phones{height:430px;max-width:440px}
-      .phone.main{width:210px}
-      .phone.side{width:155px;bottom:12px}
+      .phone.main{width:210px;border-radius:38px}
+      .phone.main::before{width:60px;height:16px;top:9px}
+      .phone.side{width:155px;bottom:12px;border-radius:32px;border-width:6px}
+      .phone.side::before{width:48px;height:12px;top:7px}
       .phone.l{left:16px;transform:rotate(-7deg) translateY(10px)}
       .phone.r{right:16px;transform:rotate(7deg) translateY(10px)}
       [dir=rtl] .phone.l{left:auto;right:16px;transform:rotate(7deg) translateY(10px)}
@@ -140,7 +230,18 @@
       .hero-grid{padding-top:74px;gap:22px}
       .hero-phones{height:auto;min-height:0;padding:12px 0 28px;align-items:center}
       .phone.side{display:none} /* Clean, centered, zero-overflow hero showcase on mobile */
-      .phone.main{width:min(240px,70vw);margin-inline:auto;border-width:6px;border-radius:30px;box-shadow:0 22px 50px rgba(0,0,0,.5)}
+      .phone.main{
+        width:min(240px,70vw);
+        margin-inline:auto;
+        border-width:7px;
+        border-radius:36px;
+        box-shadow:
+          0 0 0 1px rgba(255,255,255,.16),
+          0 24px 50px -8px rgba(0,0,0,.6);
+      }
+      .phone.main::before{width:60px;height:15px;top:8px}
+      .phone.main::after{border-radius:28px}
+      .phone.main img{border-radius:28px}
       .cta{flex-direction:column;width:100%;max-width:360px;margin-inline:auto;gap:10px}
       .btn{width:100%}
       .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:100%;max-width:400px;margin-inline:auto;padding-bottom:28px}
@@ -152,7 +253,10 @@
       .features{grid-template-columns:1fr;gap:14px}
       .card{padding:20px;border-radius:20px}
       .gallery figure{width:190px}
-      .gallery img{border-width:5px;border-radius:24px}
+      .gallery .mockup{border-width:6px;border-radius:30px}
+      .gallery .mockup::before{width:46px;height:12px;top:6px}
+      .gallery .mockup::after{border-radius:24px}
+      .gallery img{border-radius:24px}
       .chip{padding:9px 16px;font-size:.9rem}
       .band{padding:40px 20px;border-radius:22px}
       .band h2{font-size:1.45rem}
@@ -170,6 +274,7 @@
       .lang-select{font-size:.78rem;padding:6px 24px 6px 8px}
       [dir=rtl] .lang-select{padding:6px 8px 6px 24px}
       .hero-grid{padding-top:70px}
+      .phone.main{width:min(220px,68vw)}
       .stats{gap:6px}
       .stat b{font-size:1.22rem}
       .stat small{font-size:.7rem}
@@ -556,7 +661,7 @@ function render(lang){
   $("#features").innerHTML = t.f.map((x,i) =>
     `<article class="card reveal"><div class="ico">${ICONS[i]}</div><h3>${x[0]}</h3><p>${x[1]}</p></article>`).join("");
   $("#gallery").innerHTML = SHOTS.map(([img,fi]) =>
-    `<figure><img src="img/${img}.jpg" alt="${t.f[fi][0]}" width="540" height="1170" loading="lazy"><figcaption>${t.f[fi][0]}</figcaption></figure>`).join("");
+    `<figure><div class="mockup"><img src="img/${img}.jpg" alt="${t.f[fi][0]}" width="540" height="1170" loading="lazy"></div><figcaption>${t.f[fi][0]}</figcaption></figure>`).join("");
   $("#langSelect").value = lang;
   $$(".chip").forEach(c => c.classList.toggle("active", c.dataset.l === lang));
   observe();
