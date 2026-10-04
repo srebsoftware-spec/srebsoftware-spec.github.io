@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SREBSoftware · Mobil Yazılım, Yapay Zeka & Siber Güvenlik</title>
-  <meta name="description" content="SREBSoftware: Yüksek performanslı mobil uygulamalar, cihaz içi yapay zeka sistemleri ve savunma odaklı siber güvenlik çözümleri.">
+  <title id="pageTitle">SREBSoftware · Mobil Yazılım, LLM & Yapay Zeka, Siber Güvenlik</title>
+  <meta id="pageMetaDesc" name="description" content="SREBSoftware: Yüksek performanslı mobil uygulamalar, Büyük Dil Modelleri (LLM), cihaz içi yapay zeka ve MikroTik/Pentest siber güvenlik çözümleri.">
   <meta name="theme-color" content="#07090E">
-  <meta property="og:title" content="SREBSoftware · Mobil, Yapay Zeka & Siber Güvenlik Stüdyosu">
-  <meta property="og:description" content="Geleceğin dijital deneyimlerini; sağlam mühendislik, cihaz içi zeka ve siber savunma ile inşa ediyoruz.">
+  <meta property="og:title" id="ogTitle" content="SREBSoftware · Mobil, LLM & Yapay Zeka, Siber Güvenlik">
+  <meta property="og:description" id="ogDesc" content="Geleceğin dijital dünyasını; sağlam mobil mühendislik, özel LLM modelleri ve siber savunma kalkanlarıyla inşa ediyoruz.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://srebsoftware.github.io/vakit-merkezi/img/home.jpg">
   <link rel="icon" href="vakit-merkezi/img/logo.png">
@@ -22,7 +22,7 @@
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
     body{
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans",Helvetica,Arial,sans-serif;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans","Noto Sans Arabic","Noto Sans Bengali",Helvetica,Arial,sans-serif;
       background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;
     }
     a{color:inherit;text-decoration:none}
@@ -37,38 +37,70 @@
     .blob-1{top:-150px;right:-100px;background:radial-gradient(circle,#10B981,transparent 70%)}
     .blob-2{bottom:-150px;left:-100px;background:radial-gradient(circle,#06B6D4,transparent 70%)}
 
-    /* ---------- Floating Island Header ---------- */
-    header{position:fixed;top:16px;left:0;right:0;z-index:100;pointer-events:none}
+    /* ---------- Floating Island Header (Identical to Vakit Merkezi Style) ---------- */
+    header{position:fixed;top:16px;left:0;right:0;z-index:100;pointer-events:none;transition:top .3s ease}
     .nav{
-      pointer-events:auto;width:min(1160px,calc(100% - 32px));margin-inline:auto;height:64px;padding:0 22px;
-      display:flex;align-items:center;justify-content:space-between;gap:16px;
-      background:rgba(13,17,26,0.78);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
-      border:1px solid rgba(255,255,255,0.12);border-radius:999px;
-      box-shadow:0 18px 40px rgba(0,0,0,0.4),0 0 0 1px rgba(16,185,129,0.12);
+      pointer-events:auto;width:min(1160px,calc(100% - 32px));margin-inline:auto;height:64px;padding:0 20px;
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      background:rgba(13,17,26,0.82);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
+      border:1px solid rgba(255,255,255,0.14);border-radius:999px;
+      box-shadow:0 18px 40px rgba(0,0,0,0.4),0 0 0 1px rgba(16,185,129,0.14);
       transition:all .3s ease;
     }
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:1.15rem;letter-spacing:-0.2px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.12rem;letter-spacing:-0.2px;white-space:nowrap}
     .brand-icon{
-      width:36px;height:36px;border-radius:11px;
+      width:34px;height:34px;border-radius:10px;
       background:linear-gradient(135deg,#10B981,#06B6D4);
-      display:grid;place-items:center;font-size:1.1rem;box-shadow:0 4px 14px rgba(16,185,129,0.4);
+      display:grid;place-items:center;font-size:1.05rem;box-shadow:0 4px 14px rgba(16,185,129,0.4);
     }
     .brand span{background:linear-gradient(135deg,#FFFFFF,#E2E8F0);-webkit-background-clip:text;background-clip:text;color:transparent}
     .brand small{color:var(--em-light);font-size:0.75rem;font-weight:700;margin-left:2px;letter-spacing:1px}
-    .nav-links{display:flex;align-items:center;gap:4px}
+    
+    .nav-links{display:flex;align-items:center;gap:3px}
     .nav-links a{
-      color:var(--text-muted);font-weight:600;font-size:0.92rem;padding:8px 14px;border-radius:999px;
+      color:var(--text-muted);font-weight:600;font-size:0.9rem;padding:7px 12px;border-radius:999px;
       transition:all .2s ease;
     }
     .nav-links a:hover{color:#fff;background:rgba(255,255,255,0.08)}
+
+    .nav-actions{display:flex;align-items:center;gap:10px}
+
+    /* Header Language Selector - Matching Vakit Merkezi Design */
+    .lang-select{
+      appearance:none;-webkit-appearance:none;
+      background:rgba(255,255,255,0.10) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2334D399' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 14px center;
+      color:#fff;
+      border:1px solid rgba(255,255,255,0.22);
+      border-radius:999px;
+      padding:8px 36px 8px 16px;
+      font-weight:700;
+      font-size:0.86rem;
+      cursor:pointer;
+      font-family:inherit;
+      transition:all .2s ease;
+      backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    }
+    .lang-select:hover,.lang-select:focus{
+      border-color:var(--em-light);
+      background-color:rgba(255,255,255,0.16);
+      box-shadow:0 0 16px rgba(16,185,129,0.25);
+      outline:none;
+    }
+    [dir="rtl"] .lang-select{
+      background-position:left 14px center;
+      padding:8px 16px 8px 36px;
+    }
+    .lang-select option{background:#0D111A;color:#F1F5F9;padding:6px}
+
     .nav-cta{
       display:inline-flex;align-items:center;gap:8px;
       background:linear-gradient(135deg,#10B981,#059669);color:#fff;
-      padding:9px 18px;border-radius:999px;font-weight:700;font-size:0.88rem;
+      padding:8px 16px;border-radius:999px;font-weight:700;font-size:0.86rem;
       box-shadow:0 6px 20px rgba(16,185,129,0.35);transition:all .2s ease;
+      white-space:nowrap;
     }
     .nav-cta:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(16,185,129,0.5)}
-    @media(max-width:860px){.nav-links{display:none}}
+    @media(max-width:940px){.nav-links{display:none}}
 
     /* ---------- Hero Section ---------- */
     .hero{position:relative;z-index:2;padding:140px 0 70px;text-align:center}
@@ -83,16 +115,16 @@
     @keyframes pulse{0%,100%{box-shadow:0 0 20px rgba(16,185,129,0.15)}50%{box-shadow:0 0 30px rgba(16,185,129,0.3)}}
     
     h1{
-      font-size:clamp(2.3rem,5.8vw,4.3rem);line-height:1.15;font-weight:800;letter-spacing:-1px;
+      font-size:clamp(2.2rem,5.6vw,4.2rem);line-height:1.18;font-weight:800;letter-spacing:-1px;
       max-width:960px;margin:0 auto 24px;
     }
     h1 .grad{
-      background:linear-gradient(135deg,#34D399 20%,#06B6D4 60%,#8B5CF6 100%);
+      background:linear-gradient(135deg,#34D399 15%,#06B6D4 55%,#8B5CF6 100%);
       -webkit-background-clip:text;background-clip:text;color:transparent;
     }
     .hero-lead{
-      font-size:clamp(1.05rem,2.2vw,1.25rem);color:var(--text-muted);max-width:760px;margin:0 auto 38px;
-      line-height:1.65;
+      font-size:clamp(1.05rem,2.2vw,1.25rem);color:var(--text-muted);max-width:780px;margin:0 auto 38px;
+      line-height:1.68;
     }
     .hero-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:52px}
     .btn{
@@ -114,7 +146,7 @@
     /* Stats Bar */
     .hero-stats{
       display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
-      max-width:900px;margin:0 auto;
+      max-width:920px;margin:0 auto;
     }
     .stat-card{
       background:rgba(13,17,26,0.65);border:1px solid var(--border);border-radius:20px;
@@ -128,7 +160,7 @@
 
     /* ---------- Section Headers ---------- */
     section{position:relative;z-index:2;padding:84px 0}
-    .sec-head{text-align:center;max-width:740px;margin:0 auto 52px}
+    .sec-head{text-align:center;max-width:760px;margin:0 auto 52px}
     .sec-tag{
       display:inline-block;color:var(--em-light);font-size:0.85rem;font-weight:700;
       text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px;
@@ -158,15 +190,16 @@
     .pillar-icon{
       width:54px;height:54px;border-radius:16px;background:rgba(255,255,255,0.06);
       border:1px solid rgba(255,255,255,0.12);display:grid;place-items:center;
-      font-size:1.65rem;margin-bottom:18px;
+      font-size:1.6rem;margin-bottom:20px;
     }
     .pillar-badge{
-      display:inline-block;font-size:0.75rem;font-weight:800;letter-spacing:1px;
-      color:var(--em-light);margin-bottom:10px;text-transform:uppercase;
+      display:inline-block;padding:4px 12px;border-radius:999px;font-size:0.75rem;font-weight:700;
+      letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;
+      background:rgba(16,185,129,0.14);color:var(--em-light);border:1px solid rgba(16,185,129,0.3);
     }
-    .badge-ai{color:var(--cyan)}
-    .badge-sec{color:#C4B5FD}
-    .pillar-card h3{font-size:1.35rem;font-weight:800;color:#fff;margin-bottom:12px}
+    .pillar-badge.badge-ai{background:rgba(6,182,212,0.14);color:var(--cyan);border-color:rgba(6,182,212,0.3)}
+    .pillar-badge.badge-sec{background:rgba(139,92,246,0.14);color:#C4B5FD;border-color:rgba(139,92,246,0.3)}
+    .pillar-card h3{font-size:1.45rem;font-weight:800;color:#fff;margin-bottom:12px;line-height:1.3}
     .pillar-card p{color:var(--text-muted);font-size:0.96rem;line-height:1.65;margin-bottom:22px}
 
     /* ---------- Flagship Project Showcase (Vakit Merkezi) ---------- */
@@ -269,6 +302,38 @@
     .tech-card h4{font-size:1.1rem;color:#fff;margin-bottom:6px;font-weight:700}
     .tech-card p{color:var(--text-muted);font-size:0.9rem;line-height:1.55}
 
+    /* ---------- Dedicated Languages Section (Matching Vakit Merkezi #diller style) ---------- */
+    .langs{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:920px;margin:0 auto}
+    .chip{
+      background:rgba(13,17,26,0.85);
+      border:1.5px solid rgba(255,255,255,0.12);
+      color:var(--text);
+      padding:11px 22px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:0.96rem;
+      cursor:pointer;
+      transition:all .22s ease;
+      font-family:inherit;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    }
+    .chip:hover{
+      border-color:var(--em-light);
+      color:#fff;
+      transform:translateY(-3px);
+      box-shadow:0 10px 24px rgba(16,185,129,0.25);
+    }
+    .chip.active{
+      background:linear-gradient(135deg,#10B981,#047857);
+      color:#fff;
+      border-color:transparent;
+      box-shadow:0 10px 28px rgba(16,185,129,0.45);
+      transform:scale(1.02);
+    }
+
     /* ---------- About / Manifest Section ---------- */
     .manifest{
       background:radial-gradient(800px 400px at 50% 0,rgba(16,185,129,0.12),transparent 70%),
@@ -298,24 +363,56 @@
     /* ---------- Footer ---------- */
     footer{position:relative;z-index:2;border-top:1px solid var(--border);padding:50px 0 32px;background:#05070B}
     .foot-content{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;padding-bottom:28px}
+    .foot-brand small{color:var(--text-sub);display:block;margin-top:4px}
     .foot-nav{display:flex;gap:20px;flex-wrap:wrap}
     .foot-nav a{color:var(--text-muted);font-size:0.92rem;font-weight:500;transition:color .2s}
     .foot-nav a:hover{color:var(--em-light)}
     .foot-copy{text-align:center;color:var(--text-sub);font-size:0.86rem;border-top:1px solid rgba(255,255,255,0.05);padding-top:20px}
 
-    /* ---------- Mobile Responsive Styles ---------- */
+    /* RTL Support */
+    html[dir="rtl"] body{text-align:right}
+    html[dir="rtl"] .hero,html[dir="rtl"] .sec-head,html[dir="rtl"] .manifest,html[dir="rtl"] .contact-box{text-align:center}
+    html[dir="rtl"] .nav-links{flex-direction:row-reverse}
+    html[dir="rtl"] .brand small{margin-left:0;margin-right:2px}
+
+    /* Responsive Grid Breakpoints */
     @media(max-width:960px){
       .flagship-card{grid-template-columns:1fr;padding:36px;gap:36px;text-align:center}
       .tag-row,.flagship-btns{justify-content:center}
       .hero-stats{grid-template-columns:repeat(2,1fr)}
     }
+
+    /* Tablet Breakpoint (880px) */
+    @media(max-width:880px){
+      .nav-links{display:none}
+      .brand small{display:none}
+    }
+
+    /* Mobile Breakpoint (640px) */
     @media(max-width:640px){
       header{top:10px}
-      .nav{width:calc(100% - 20px);height:54px;padding:0 14px}
-      .brand{font-size:1rem}
-      .brand-icon{width:30px;height:30px;font-size:0.95rem}
-      .nav-cta{padding:7px 14px;font-size:0.8rem}
-      .hero{padding:105px 0 50px}
+      .nav{
+        width:calc(100% - 20px);
+        height:52px;
+        padding:0 12px;
+        gap:8px;
+        border-radius:999px;
+      }
+      .brand{font-size:0.98rem;gap:8px}
+      .brand-icon{width:30px;height:30px;font-size:0.95rem;border-radius:8px}
+      .brand small{display:none}
+      .nav-links{display:none}
+      .nav-cta{display:none} /* Clean, uncluttered, zero-overflow header like Vakit Merkezi */
+      .lang-select{
+        font-size:0.8rem;
+        padding:7px 28px 7px 12px;
+        background-position:right 10px center;
+      }
+      [dir="rtl"] .lang-select{
+        padding:7px 12px 7px 28px;
+        background-position:left 10px center;
+      }
+      .hero{padding:100px 0 46px}
       h1{margin-bottom:18px}
       .hero-actions{flex-direction:column;width:100%;max-width:340px;margin-inline:auto;gap:10px}
       .btn{width:100%}
@@ -327,8 +424,19 @@
       .flagship-btns .btn{width:100%}
       .phone-mock{width:210px}
       .manifest{padding:40px 18px;border-radius:26px}
+      .chip{padding:9px 16px;font-size:0.88rem}
       .foot-content{flex-direction:column;text-align:center;justify-content:center}
       .foot-nav{justify-content:center}
+    }
+
+    /* Small Mobile Breakpoint (380px) */
+    @media(max-width:380px){
+      header{top:8px}
+      .nav{width:calc(100% - 14px);height:48px;padding:0 10px}
+      .brand{font-size:0.88rem;gap:6px}
+      .brand-icon{width:26px;height:26px;font-size:0.85rem}
+      .lang-select{font-size:0.75rem;padding:6px 24px 6px 10px;background-position:right 8px center}
+      [dir="rtl"] .lang-select{padding:6px 10px 6px 24px;background-position:left 8px center}
     }
   </style>
 </head>
@@ -346,16 +454,30 @@
       <div><span>SREBSoftware</span><small>STUDIO</small></div>
     </a>
     <nav class="nav-links">
-      <a href="#uzmanliklar">Uzmanlıklar</a>
-      <a href="#projeler">Projeler</a>
-      <a href="#yetenekler">Yetenekler</a>
-      <a href="#hakkimizda">Hakkımızda</a>
-      <a href="#iletisim">İletişim</a>
+      <a href="#uzmanliklar" data-t="nav.pillars">Uzmanlıklar</a>
+      <a href="#projeler" data-t="nav.projects">Projeler</a>
+      <a href="#yetenekler" data-t="nav.tech">Yetenekler</a>
+      <a href="#diller" data-t="nav.languages">Diller</a>
+      <a href="#hakkimizda" data-t="nav.about">Hakkımızda</a>
+      <a href="#iletisim" data-t="nav.contact">İletişim</a>
     </nav>
-    <a class="nav-cta" href="vakit-merkezi/">
-      <span>Vakit Merkezi</span>
-      <span>→</span>
-    </a>
+    <div class="nav-actions">
+      <select id="langSelect" class="lang-select" aria-label="Language">
+        <option value="tr">🇹🇷 TR</option>
+        <option value="en">🇬🇧 EN</option>
+        <option value="ar">🇸🇦 العربية</option>
+        <option value="id">🇮🇩 ID</option>
+        <option value="ms">🇲🇾 MS</option>
+        <option value="ur">🇵🇰 اردو</option>
+        <option value="bn">🇧🇩 বাংলা</option>
+        <option value="fr">🇫🇷 FR</option>
+        <option value="de">🇩🇪 DE</option>
+      </select>
+      <a class="nav-cta" href="vakit-merkezi/">
+        <span data-t="nav.flagshipBtn">Vakit Merkezi</span>
+        <span>→</span>
+      </a>
+    </div>
   </div>
 </header>
 
@@ -364,37 +486,42 @@
   <div class="container">
     <div class="badge-status">
       <span class="dot"></span>
-      <span>Mobil Yazılım · Yapay Zeka (AI) · Siber Güvenlik</span>
+      <span data-t="hero.badge">Mobil Yazılım · Yapay Zeka & LLM · Siber Güvenlik & MikroTik</span>
     </div>
     <h1>
-      Mobil, <span class="grad">Yapay Zeka</span> ve<br>
-      <span class="grad">Siber Güvenlik</span> Mimarisi
+      <span data-t="hero.titlePre">Mobil, </span><span class="grad" data-t="hero.titleGrad">LLM & Yapay Zeka</span><br>
+      <span data-t="hero.titlePost">ve Siber Güvenliğin Zirvesi</span>
     </h1>
-    <p class="hero-lead">
-      SREBSoftware; yüksek performanslı mobil uygulamalar, cihaz içi (on-device) yapay zeka sistemleri ve savunma odaklı siber güvenlik altyapıları geliştiren ileri teknoloji stüdyosudur.
+    <p class="hero-lead" data-t="hero.lead">
+      Geleceğin dijital dünyasını; yüksek performanslı Flutter mobil mimarileri, özel eğitilmiş Büyük Dil Modelleri (LLM), cihaz içi yapay zeka ve MikroTik pentest siber savunma kalkanlarıyla inşa ediyoruz.
     </p>
+
     <div class="hero-actions">
-      <a class="btn btn-primary" href="#projeler">🚀 Projelerimizi Keşfedin</a>
-      <a class="btn btn-secondary" href="#uzmanliklar">🛡️ Uzmanlık Alanlarımız</a>
-      <a class="btn btn-secondary" href="vakit-merkezi/">📱 Vakit Merkezi</a>
+      <a class="btn btn-primary" href="#projeler">
+        <span data-t="hero.btnProjects">Geliştirdiğimiz Projeler</span>
+        <span>→</span>
+      </a>
+      <a class="btn btn-secondary" href="#iletisim">
+        <span data-t="hero.btnContact">İletişime Geçin</span>
+      </a>
     </div>
 
     <div class="hero-stats">
       <div class="stat-card">
-        <b>AI<span>+</span></b>
-        <small>Cihaz İçi Yapay Zeka</small>
+        <b data-t="hero.stat1Val">LLM+</b>
+        <small data-t="hero.stat1Lbl">Özel LLM & Yapay Zeka</small>
       </div>
       <div class="stat-card">
-        <b>SEC<span>🛡️</span></b>
-        <small>Siber Güvenlik Mimarisi</small>
+        <b data-t="hero.stat2Val">SEC🛡️</b>
+        <small data-t="hero.stat2Lbl">Pentesting & MikroTik</small>
       </div>
       <div class="stat-card">
-        <b>18<span>+</span></b>
-        <small>Canlı İbadet Aracı</small>
+        <b data-t="hero.stat3Val">18+</b>
+        <small data-t="hero.stat3Lbl">Canlı İbadet Aracı</small>
       </div>
       <div class="stat-card">
-        <b>9</b>
-        <small>Küresel Dil Desteği</small>
+        <b data-t="hero.stat4Val">9</b>
+        <small data-t="hero.stat4Lbl">Küresel Dil Desteği</small>
       </div>
     </div>
   </div>
@@ -404,19 +531,19 @@
 <section id="uzmanliklar" style="padding-top:20px">
   <div class="container">
     <div class="sec-head">
-      <span class="sec-tag">TEMEL MÜHENDİSLİK DİSİPLİNLERİMİZ</span>
-      <h2 class="sec-title">Uzmanlık Alanlarımız</h2>
-      <p class="sec-desc">Yüksek performanslı mobil geliştirme, gizlilik odaklı yapay zeka ve proaktif siber savunma üçgeninde yenilikçi çözümler.</p>
+      <span class="sec-tag" data-t="pillarsSec.tag">TEMEL MÜHENDİSLİK DİSİPLİNLERİMİZ</span>
+      <h2 class="sec-title" data-t="pillarsSec.title">Uzmanlık Alanlarımız</h2>
+      <p class="sec-desc" data-t="pillarsSec.desc">Performanslı mobil geliştirme, LLM & yapay zeka mühendisliği ve proaktif siber güvenlik üçgeninde yeni nesil teknoloji çözümleri.</p>
     </div>
 
     <div class="pillars-grid">
       <!-- 1. Mobile Engineering -->
       <div class="pillar-card">
         <div class="pillar-icon">📱</div>
-        <div class="pillar-badge">MOBİL MÜHENDİSLİK</div>
-        <h3>Çapraz Platform & Yüksek Performans</h3>
-        <p>Flutter ve Dart mimarisiyle iOS ve Android ekosistemleri için 60/120 FPS akıcı, bellek sızıntısı olmayan, çevrimdışı öncelikli (offline-first) yerel performanslı mobil uygulamalar geliştiriyoruz.</p>
-        <div class="tag-row">
+        <div class="pillar-badge" data-t="pillarsSec.p1Badge">MOBİL MÜHENDİSLİK</div>
+        <h3 data-t="pillarsSec.p1Title">Çapraz Platform & Yüksek Performans</h3>
+        <p data-t="pillarsSec.p1Desc">Flutter ve Dart mimarisiyle iOS ve Android ekosistemleri için 60/120 FPS akıcı, sıfır bellek sızıntılı, çevrimdışı öncelikli (offline-first) ve native hızda çalışan mobil uygulamalar geliştiriyoruz.</p>
+        <div class="tag-row" id="p1TagRow">
           <span class="tag accent">Flutter & Dart</span>
           <span class="tag">Offline-First</span>
           <span class="tag">Haptik & Animasyon</span>
@@ -424,27 +551,28 @@
         </div>
       </div>
 
-      <!-- 2. Artificial Intelligence -->
+      <!-- 2. Artificial Intelligence & LLM -->
       <div class="pillar-card highlight-ai">
         <div class="pillar-icon">🧠</div>
-        <div class="pillar-badge badge-ai">YAPAY ZEKA (AI)</div>
-        <h3>Cihaz İçi Zeka & Makine Öğrenimi</h3>
-        <p>Kullanıcı verisini sunuculara göndermeden doğrudan cihaz üzerinde (on-device) çalışan optimize edilmiş hafif dil modelleri (SLM), doğal dil işleme (NLP) ve akıllı asistan motorları geliştiriyoruz.</p>
-        <div class="tag-row">
-          <span class="tag accent">On-Device AI</span>
-          <span class="tag">Edge Inference</span>
-          <span class="tag">Gizlilik Odaklı Zeka</span>
-          <span class="tag">NLP & Otomasyon</span>
+        <div class="pillar-badge badge-ai" data-t="pillarsSec.p2Badge">YAPAY ZEKA & LLM</div>
+        <h3 data-t="pillarsSec.p2Title">Büyük Dil Modelleri & Cihaz İçi Zeka</h3>
+        <p data-t="pillarsSec.p2Desc">Özel kurumsal LLM (Büyük Dil Modeli) geliştirme, açık kaynak modellerde LoRA/QLoRA fine-tuning, RAG vektör mimarileri, otonom AI ajanları ve cihaz içi (on-device) sıfır veri sızıntılı edge AI motorları üretiyoruz.</p>
+        <div class="tag-row" id="p2TagRow">
+          <span class="tag accent">LLM Geliştirme</span>
+          <span class="tag accent">LoRA Fine-Tuning</span>
+          <span class="tag">RAG & Vector DB</span>
+          <span class="tag">On-Device AI</span>
+          <span class="tag">Otonom Ajanlar</span>
         </div>
       </div>
 
       <!-- 3. Cybersecurity & Pentesting & Network -->
       <div class="pillar-card highlight-sec">
         <div class="pillar-icon">🛡️</div>
-        <div class="pillar-badge badge-sec">SİBER GÜVENLİK & NETWORK</div>
-        <h3>Pentesting, MikroTik & Savunma</h3>
-        <p>Web, API ve mobil sızma testleri (Pentesting), tersine mühendislik, kod karartma, MikroTik RouterOS ile kurumsal ağ segmentasyonu (VLAN, Firewall, WireGuard/IPsec VPN) ve uçtan uca siber savunma mimarisi uyguluyoruz.</p>
-        <div class="tag-row">
+        <div class="pillar-badge badge-sec" data-t="pillarsSec.p3Badge">SİBER GÜVENLİK & NETWORK</div>
+        <h3 data-t="pillarsSec.p3Title">Pentesting, MikroTik & Savunma</h3>
+        <p data-t="pillarsSec.p3Desc">Web, API ve mobil sızma testleri (Pentesting), tersine mühendislik, kod karartma, MikroTik RouterOS ile kurumsal ağ segmentasyonu (VLAN, Firewall, WireGuard/IPsec VPN) ve uçtan uca siber savunma mimarisi uyguluyoruz.</p>
+        <div class="tag-row" id="p3TagRow">
           <span class="tag accent">Pentesting (Sızma Testi)</span>
           <span class="tag accent">MikroTik RouterOS</span>
           <span class="tag">Firewall & VLAN</span>
@@ -461,20 +589,20 @@
 <section id="projeler">
   <div class="container">
     <div class="sec-head">
-      <span class="sec-tag">ÖNE ÇIKAN PORTFOLYO</span>
-      <h2 class="sec-title">Geliştirdiğimiz Ürünler</h2>
-      <p class="sec-desc">Kullanıcıların günlük yaşamına gerçek değer katan, titizlikle tasarlanmış dijital çözümler.</p>
+      <span class="sec-tag" data-t="projectsSec.tag">ÖNE ÇIKAN PORTFOLYO</span>
+      <h2 class="sec-title" data-t="projectsSec.title">Geliştirdiğimiz Ürünler</h2>
+      <p class="sec-desc" data-t="projectsSec.desc">Kullanıcıların günlük yaşamına gerçek değer katan, titizlikle tasarlanmış dijital çözümler.</p>
     </div>
 
     <!-- Flagship: Vakit Merkezi -->
     <div class="flagship-card">
       <div>
-        <div class="flagship-badge">✨ AMİRAL GEMİSİ · CANLIDA</div>
-        <h3 class="flagship-title">Vakit Merkezi</h3>
-        <p class="flagship-p">
+        <div class="flagship-badge" data-t="projectsSec.flagBadge">✨ AMİRAL GEMİSİ · CANLIDA</div>
+        <h3 class="flagship-title" data-t="projectsSec.flagTitle">Vakit Merkezi</h3>
+        <p class="flagship-p" data-t="projectsSec.flagDesc">
           Diyanet ve küresel standartlara tam uyumlu namaz vakitleri, sesli 30 cüz Kur'an mukabelesi, canlı pusulalı kıble bulucu, haptik titreşimli akıllı zikirmatik ve 84 günlük ibadet çetelesi sunan hepsi-bir-arada manevi asistan.
         </p>
-        <div class="tag-row">
+        <div class="tag-row" id="flagTagRow">
           <span class="tag accent">Flutter & Dart</span>
           <span class="tag accent">9 Dil & RTL</span>
           <span class="tag">Diyanet API</span>
@@ -485,11 +613,11 @@
         </div>
         <div class="flagship-btns">
           <a class="btn btn-primary" href="vakit-merkezi/">
-            <span>Detaylı Proje Sayfası</span>
+            <span data-t="projectsSec.flagBtnDetails">Detaylı Proje Sayfası</span>
             <span>→</span>
           </a>
           <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=com.srebsoftware.vakitmerkezi" target="_blank" rel="noopener">
-            <span>Google Play'de İndir</span>
+            <span data-t="projectsSec.flagBtnPlay">Google Play'de İndir</span>
           </a>
         </div>
       </div>
@@ -503,26 +631,26 @@
     <!-- Upcoming & Lab Projects -->
     <div class="upcoming-grid">
       <div class="proj-card">
-        <div class="proj-badge" style="background:rgba(6,182,212,0.15);border-color:rgba(6,182,212,0.3);color:var(--cyan)">🧠 AR-GE & AI LAB · GELİŞTİRİLİYOR</div>
-        <h3>Cihaz İçi Gizli Yapay Zeka Asistanı</h3>
-        <p>
-          Kişisel veri gizliliğine tam saygılı, hiçbir veriyi buluta iletmeyen, cihaz üzerinde (on-device) doğrudan çalışan optimize edilmiş küçük dil modeli ve kişisel üretkenlik asistanı.
+        <div class="proj-badge" style="background:rgba(6,182,212,0.15);border-color:rgba(6,182,212,0.3);color:var(--cyan)" data-t="projectsSec.lab1Badge">🧠 AR-GE & LLM LAB · GELİŞTİRİLİYOR</div>
+        <h3 data-t="projectsSec.lab1Title">Kurumsal LLM & Cihaz İçi Yapay Zeka Asistanı</h3>
+        <p data-t="projectsSec.lab1Desc">
+          Şirket içi hassas verilerle güvenli çalışan, bulut bağımlılığı olmayan yerel LLM motoru, vektör tabanlı RAG bilgi bankası ve otonom görev icra eden kişisel yapay zeka ajanı.
         </p>
-        <div class="tag-row">
-          <span class="tag">On-Device AI</span>
+        <div class="tag-row" id="lab1TagRow">
+          <span class="tag">Özel LLM</span>
+          <span class="tag">RAG Mimarisi</span>
           <span class="tag">Edge Inference</span>
           <span class="tag">Zero-Cloud Leak</span>
-          <span class="tag">NLP</span>
         </div>
       </div>
 
       <div class="proj-card">
-        <div class="proj-badge" style="background:rgba(139,92,246,0.15);border-color:rgba(139,92,246,0.3);color:#C4B5FD">🛡️ NETWORK & SEC LAB · GELİŞTİRİLİYOR</div>
-        <h3>MikroTik & Güvenlik Otomasyon Kalkanı</h3>
-        <p>
+        <div class="proj-badge" style="background:rgba(139,92,246,0.15);border-color:rgba(139,92,246,0.3);color:#C4B5FD" data-t="projectsSec.lab2Badge">🛡️ NETWORK & SEC LAB · GELİŞTİRİLİYOR</div>
+        <h3 data-t="projectsSec.lab2Title">MikroTik & Güvenlik Otomasyon Kalkanı</h3>
+        <p data-t="projectsSec.lab2Desc">
           MikroTik RouterOS altyapıları için otomatik tehdit engelleme, dinamik IP karaliste senkronizasyonu, şüpheli port taraması tespiti ve Zero-Trust VPN yönetim aracı.
         </p>
-        <div class="tag-row">
+        <div class="tag-row" id="lab2TagRow">
           <span class="tag">MikroTik RouterOS</span>
           <span class="tag">Pentesting Tools</span>
           <span class="tag">Firewall Automation</span>
@@ -538,60 +666,72 @@
 <section id="yetenekler">
   <div class="container">
     <div class="sec-head">
-      <span class="sec-tag">MÜHENDİSLİK STANDARTLARI</span>
-      <h2 class="sec-title">Teknolojiler & Yeteneklerimiz</h2>
-      <p class="sec-desc">Modern yazılım dünyasının en güçlü araçlarını kullanarak ölçeklenebilir, akıllı ve zırhlı temeller kuruyoruz.</p>
+      <span class="sec-tag" data-t="techSec.tag">MÜHENDİSLİK STANDARTLARI</span>
+      <h2 class="sec-title" data-t="techSec.title">Teknolojiler & Yeteneklerimiz</h2>
+      <p class="sec-desc" data-t="techSec.desc">Modern yazılım dünyasının en güçlü araçlarını kullanarak ölçeklenebilir, akıllı ve zırhlı temeller kuruyoruz.</p>
     </div>
 
     <div class="tech-grid">
       <div class="tech-card">
+        <div class="tech-ico">🧠</div>
+        <h4 data-t="techSec.t1Title">Büyük Dil Modelleri (LLM) & RAG</h4>
+        <p data-t="techSec.t1Desc">Özel veri kümeleriyle LLM fine-tuning (LoRA/QLoRA), vektör veritabanları (Chroma, Pinecone) ile RAG mimarisi ve otonom yapay zeka ajanları.</p>
+      </div>
+
+      <div class="tech-card">
         <div class="tech-ico">🛡️</div>
-        <h4>Sızma Testleri (Pentesting) & Denetim</h4>
-        <p>Web, API ve mobil uygulamalara yönelik proaktif sızma testleri, OWASP Top 10 denetimleri ve zafiyet analizi.</p>
+        <h4 data-t="techSec.t2Title">Sızma Testleri (Pentesting) & Denetim</h4>
+        <p data-t="techSec.t2Desc">Web, API ve mobil uygulamalara yönelik proaktif sızma testleri, OWASP Top 10 denetimleri ve zafiyet analizi.</p>
       </div>
 
       <div class="tech-card">
         <div class="tech-ico">🌐</div>
-        <h4>Ağ Güvenliği & MikroTik (RouterOS)</h4>
-        <p>MikroTik RouterOS tabanlı güvenlik duvarı (Firewall), paket filtreleme (Mangle), VLAN izolasyonu ve ağ zırhlaması.</p>
+        <h4 data-t="techSec.t3Title">Ağ Güvenliği & MikroTik (RouterOS)</h4>
+        <p data-t="techSec.t3Desc">MikroTik RouterOS tabanlı güvenlik duvarı (Firewall), paket filtreleme (Mangle), VLAN izolasyonu ve ağ zırhlaması.</p>
       </div>
 
       <div class="tech-card">
         <div class="tech-ico">🔒</div>
-        <h4>VPN & Güvenli Tüneller (WireGuard)</h4>
-        <p>Yüksek performanslı WireGuard, IPsec ve OpenVPN tünelleri ile şubeler arası ve uzaktan güvenli Zero-Trust ağ erişimi.</p>
-      </div>
-
-      <div class="tech-card">
-        <div class="tech-ico">🧠</div>
-        <h4>Cihaz İçi Yapay Zeka (Edge AI)</h4>
-        <p>Hafif dil modelleri (SLM) ve NLP ile kullanıcı verisini dışarı aktarmadan cihaz üzerinde çalışan akıllı çıkarım motorları.</p>
-      </div>
-
-      <div class="tech-card">
-        <div class="tech-ico">🛡️</div>
-        <h4>Uygulama Savunması & Hardening</h4>
-        <p>Kod karartma (Obfuscation), Anti-Tamper, root/jailbreak tespiti ve bellek manipülasyon savunması ile zırhlı uygulamalar.</p>
-      </div>
-
-      <div class="tech-card">
-        <div class="tech-ico">🔐</div>
-        <h4>Kriptografi & Veri Şifreleme</h4>
-        <p>AES-256, RSA asimetrik anahtarlama, SSL/TLS Pinning ve güvenli anahtar kasası yönetimi ile sıfır veri sızıntısı.</p>
-      </div>
-
-      <div class="tech-card">
-        <div class="tech-ico">📱</div>
-        <h4>Çapraz Platform Mobil (Flutter)</h4>
-        <p>Tek kod tabanı ile iOS ve Android için 60/120 FPS akıcı, bellek optimizasyonlu ve modüler mobil mimariler.</p>
+        <h4 data-t="techSec.t4Title">VPN & Güvenli Tüneller (WireGuard)</h4>
+        <p data-t="techSec.t4Desc">Yüksek performanslı WireGuard, IPsec ve OpenVPN tünelleri ile şubeler arası ve uzaktan güvenli Zero-Trust ağ erişimi.</p>
       </div>
 
       <div class="tech-card">
         <div class="tech-ico">⚡</div>
-        <h4>Çevrimdışı Öncelikli Sistemler</h4>
-        <p>İnternet bağlantısı kesildiğinde bile kullanıcıyı yarı yolda bırakmayan yerel SQLite/Hive önbellekleme ve senkronizasyon.</p>
+        <h4 data-t="techSec.t5Title">Cihaz İçi Yapay Zeka (Edge AI)</h4>
+        <p data-t="techSec.t5Desc">Hafif dil modelleri (SLM) ve NLP ile kullanıcı verisini dışarı aktarmadan cihaz üzerinde çalışan akıllı çıkarım motorları.</p>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-ico">🛡️</div>
+        <h4 data-t="techSec.t6Title">Uygulama Savunması & Hardening</h4>
+        <p data-t="techSec.t6Desc">Kod karartma (Obfuscation), Anti-Tamper, root/jailbreak tespiti ve bellek manipülasyon savunması ile zırhlı uygulamalar.</p>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-ico">🔐</div>
+        <h4 data-t="techSec.t7Title">Kriptografi & Veri Şifreleme</h4>
+        <p data-t="techSec.t7Desc">AES-256, RSA asimetrik anahtarlama, SSL/TLS Pinning ve güvenli anahtar kasası yönetimi ile sıfır veri sızıntısı.</p>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-ico">📱</div>
+        <h4 data-t="techSec.t8Title">Çapraz Platform Mobil (Flutter)</h4>
+        <p data-t="techSec.t8Desc">Tek kod tabanı ile iOS ve Android için 60/120 FPS akıcı, bellek optimizasyonlu ve modüler mobil mimariler.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- Dedicated Languages Section (#diller - Identical to Vakit Merkezi Chips) -->
+<section id="diller">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-tag" data-t="langSec.tag">KÜRESEL ERİŞİM & ÇOK DİLLİ DESTEK</span>
+      <h2 class="sec-title" data-t="langSec.title">9 Farklı Dilde Kullanım</h2>
+      <p class="sec-desc" data-t="langSec.desc">Dünya genelindeki tüm kullanıcılar için sağdan sola (RTL) okuma desteği de dahil olmak üzere kusursuz yerelleştirme deneyimi sunuyoruz.</p>
+    </div>
+    <div class="langs" id="langChips"></div>
   </div>
 </section>
 
@@ -599,15 +739,16 @@
 <section id="hakkimizda">
   <div class="container">
     <div class="manifest">
-      <h2>Sade, Akıllı ve Güvenli Yazılımlar</h2>
-      <p>
+      <h2 data-t="aboutSec.title">Sade, Akıllı ve Güvenli Yazılımlar</h2>
+      <p data-t="aboutSec.desc">
         SREBSoftware olarak felsefemiz; karmaşık teknolojileri kullanıcı için zahmetsiz, akıllı ve tam korumalı deneyimlere dönüştürmektir. Performans, gizlilik ve güvenlikten ödün vermeden geleceği kodluyoruz.
       </p>
       <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
-        <span class="tag accent">#TemizKod</span>
-        <span class="tag accent">#YapayZeka</span>
-        <span class="tag accent">#SiberGüvenlik</span>
-        <span class="tag accent">#YüksekPerformans</span>
+        <span class="tag accent" data-t="aboutSec.tag1">#TemizKod</span>
+        <span class="tag accent" data-t="aboutSec.tag2">#LLMGeliştirme</span>
+        <span class="tag accent" data-t="aboutSec.tag3">#YapayZeka</span>
+        <span class="tag accent" data-t="aboutSec.tag4">#SiberGüvenlik</span>
+        <span class="tag accent" data-t="aboutSec.tag5">#MikroTik</span>
       </div>
     </div>
   </div>
@@ -617,11 +758,11 @@
 <section id="iletisim">
   <div class="container">
     <div class="contact-box">
-      <h3>Birlikte Yeni Fikirler İnşa Edelim</h3>
-      <p>Yapay zeka, mobil uygulama veya güvenlik odaklı projeleriniz için bize dilediğiniz zaman ulaşabilirsiniz.</p>
+      <h3 data-t="contactSec.title">Bir Projeniz mi Var?</h3>
+      <p data-t="contactSec.desc">Mobil uygulama, özel LLM / yapay zeka modeli veya siber güvenlik & MikroTik altyapı ihtiyaçlarınız için bizimle doğrudan iletişime geçin.</p>
       <a class="email-chip" href="mailto:srebsoftware@gmail.com">
         <span>✉️</span>
-        <span>srebsoftware@gmail.com</span>
+        <span data-t="contactSec.email">srebsoftware@gmail.com</span>
       </a>
     </div>
   </div>
@@ -631,100 +772,1573 @@
 <footer>
   <div class="container">
     <div class="foot-content">
-      <div class="brand">
-        <div class="brand-icon" style="width:30px;height:30px;font-size:0.95rem">⚡</div>
-        <span>SREBSoftware</span>
+      <div class="foot-brand">
+        <div class="brand">
+          <div class="brand-icon">⚡</div>
+          <div><span>SREBSoftware</span><small>STUDIO</small></div>
+        </div>
+        <small data-t="footer.brandDesc">Mobil Mühendislik · LLM & Yapay Zeka · Siber Savunma & MikroTik</small>
       </div>
-      <nav class="foot-nav">
-        <a href="#uzmanliklar">Uzmanlıklar</a>
-        <a href="vakit-merkezi/">Vakit Merkezi Projesi</a>
-        <a href="https://sites.google.com/view/vakit-merkezi-app/ana-sayfa" target="_blank" rel="noopener">Gizlilik Politikası</a>
-        <a href="app-ads.txt">app-ads.txt</a>
-        <a href="mailto:srebsoftware@gmail.com">İletişim</a>
-      </nav>
+      <div class="foot-nav">
+        <a href="vakit-merkezi/" data-t="footer.navVakit">Vakit Merkezi</a>
+        <a href="vakit-merkezi/#privacy" data-t="footer.privacy">Gizlilik Politikası</a>
+        <a href="#iletisim" data-t="footer.contact">İletişim</a>
+      </div>
     </div>
-    <div class="foot-copy">
-      © 2026 SREBSoftware. Tüm hakları saklıdır. · <a href="vakit-merkezi/" style="color:var(--em-light)">vakit-merkezi/</a>
+    <div class="foot-copy" data-t="footer.copy">
+      © 2026 SREBSoftware Studio. Tüm hakları saklıdır.
     </div>
   </div>
 </footer>
 
 <script>
-/* Interactive Constellation Particle Canvas */
-(function(){
-  const canvas = document.getElementById("bgCanvas");
-  const ctx = canvas.getContext("2d");
-  let w, h, particles = [];
-  const count = 55;
-  let mouse = { x: null, y: null, maxDist: 140 };
-
-  function resize(){
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
+/* -------------------------------------------------------------
+   Language Internationalization (9 Languages & RTL Support)
+---------------------------------------------------------------- */
+const I18N = {
+  "tr": {
+    "metaTitle": "SREBSoftware · Mobil Yazılım, LLM & Yapay Zeka, Siber Güvenlik",
+    "metaDesc": "SREBSoftware: Yüksek performanslı mobil uygulamalar, Büyük Dil Modelleri (LLM), cihaz içi yapay zeka ve MikroTik/Pentest siber güvenlik çözümleri.",
+    "nav": {
+      "pillars": "Uzmanlıklar",
+      "projects": "Projeler",
+      "tech": "Yetenekler",
+      "languages": "Diller",
+      "about": "Hakkımızda",
+      "contact": "İletişim",
+      "flagshipBtn": "Vakit Merkezi"
+    },
+    "hero": {
+      "badge": "Mobil Yazılım · Yapay Zeka & LLM · Siber Güvenlik & MikroTik",
+      "titlePre": "Mobil, ",
+      "titleGrad": "LLM & Yapay Zeka",
+      "titlePost": "ve Siber Güvenliğin Zirvesi",
+      "lead": "Geleceğin dijital dünyasını; yüksek performanslı Flutter mobil mimarileri, özel eğitilmiş Büyük Dil Modelleri (LLM), cihaz içi yapay zeka ve MikroTik pentest siber savunma kalkanlarıyla inşa ediyoruz.",
+      "btnProjects": "Geliştirdiğimiz Projeler",
+      "btnContact": "İletişime Geçin",
+      "stat1Val": "LLM+",
+      "stat1Lbl": "Özel LLM & Yapay Zeka",
+      "stat2Val": "SEC🛡️",
+      "stat2Lbl": "Pentesting & MikroTik",
+      "stat3Val": "18+",
+      "stat3Lbl": "Canlı İbadet Aracı",
+      "stat4Val": "9",
+      "stat4Lbl": "Küresel Dil Desteği"
+    },
+    "pillarsSec": {
+      "tag": "TEMEL MÜHENDİSLİK DİSİPLİNLERİMİZ",
+      "title": "Uzmanlık Alanlarımız",
+      "desc": "Performanslı mobil geliştirme, LLM & yapay zeka mühendisliği ve proaktif siber güvenlik üçgeninde yeni nesil teknoloji çözümleri.",
+      "p1Badge": "MOBİL MÜHENDİSLİK",
+      "p1Title": "Çapraz Platform & Yüksek Performans",
+      "p1Desc": "Flutter ve Dart mimarisiyle iOS ve Android ekosistemleri için 60/120 FPS akıcı, sıfır bellek sızıntılı, çevrimdışı öncelikli (offline-first) ve native hızda çalışan mobil uygulamalar geliştiriyoruz.",
+      "p1Tags": [
+        "Flutter & Dart",
+        "Offline-First",
+        "Haptik & Animasyon",
+        "9 Dil & RTL"
+      ],
+      "p2Badge": "YAPAY ZEKA & LLM",
+      "p2Title": "Büyük Dil Modelleri & Cihaz İçi Zeka",
+      "p2Desc": "Özel kurumsal LLM (Büyük Dil Modeli) geliştirme, açık kaynak modellerde LoRA/QLoRA fine-tuning, RAG vektör mimarileri, otonom AI ajanları ve cihaz içi (on-device) sıfır veri sızıntılı edge AI motorları üretiyoruz.",
+      "p2Tags": [
+        "LLM Geliştirme",
+        "LoRA Fine-Tuning",
+        "RAG & Vector DB",
+        "On-Device AI",
+        "Otonom Ajanlar"
+      ],
+      "p3Badge": "SİBER GÜVENLİK & NETWORK",
+      "p3Title": "Pentesting, MikroTik & Savunma",
+      "p3Desc": "Web, API ve mobil sızma testleri (Pentesting), tersine mühendislik, kod karartma, MikroTik RouterOS ile kurumsal ağ segmentasyonu (VLAN, Firewall, WireGuard/IPsec VPN) ve uçtan uca siber savunma mimarisi uyguluyoruz.",
+      "p3Tags": [
+        "Pentesting (Sızma Testi)",
+        "MikroTik RouterOS",
+        "Firewall & VLAN",
+        "WireGuard / IPsec",
+        "App Hardening",
+        "OWASP & Kriptografi"
+      ]
+    },
+    "projectsSec": {
+      "tag": "ÖNE ÇIKAN PORTFOLYO",
+      "title": "Geliştirdiğimiz Ürünler",
+      "desc": "Kullanıcıların günlük yaşamına gerçek değer katan, titizlikle tasarlanmış dijital çözümler.",
+      "flagBadge": "✨ AMİRAL GEMİSİ · CANLIDA",
+      "flagTitle": "Vakit Merkezi",
+      "flagDesc": "Diyanet ve küresel standartlara tam uyumlu namaz vakitleri, sesli 30 cüz Kur'an mukabelesi, canlı pusulalı kıble bulucu, haptik titreşimli akıllı zikirmatik ve 84 günlük ibadet çetelesi sunan hepsi-bir-arada manevi asistan.",
+      "flagTags": [
+        "Flutter & Dart",
+        "9 Dil & RTL",
+        "Diyanet API",
+        "Canlı Kıble",
+        "84 Gün Isı Haritası",
+        "AdMob & IAP",
+        "Çevrimdışı (Offline-First)"
+      ],
+      "flagBtnDetails": "Detaylı Proje Sayfası",
+      "flagBtnPlay": "Google Play'de İndir",
+      "lab1Badge": "🧠 AR-GE & LLM LAB · GELİŞTİRİLİYOR",
+      "lab1Title": "Kurumsal LLM & Cihaz İçi Yapay Zeka Asistanı",
+      "lab1Desc": "Şirket içi hassas verilerle güvenli çalışan, bulut bağımlılığı olmayan yerel LLM motoru, vektör tabanlı RAG bilgi bankası ve otonom görev icra eden kişisel yapay zeka ajanı.",
+      "lab1Tags": [
+        "Özel LLM",
+        "RAG Mimarisi",
+        "Edge Inference",
+        "Zero-Cloud Leak"
+      ],
+      "lab2Badge": "🛡️ NETWORK & SEC LAB · GELİŞTİRİLİYOR",
+      "lab2Title": "MikroTik & Güvenlik Otomasyon Kalkanı",
+      "lab2Desc": "MikroTik RouterOS altyapıları için otomatik tehdit engelleme, dinamik IP karaliste senkronizasyonu, şüpheli port taraması tespiti ve Zero-Trust VPN yönetim aracı.",
+      "lab2Tags": [
+        "MikroTik RouterOS",
+        "Pentesting Tools",
+        "Firewall Automation",
+        "Zero-Trust"
+      ]
+    },
+    "techSec": {
+      "tag": "MÜHENDİSLİK STANDARTLARI",
+      "title": "Teknolojiler & Yeteneklerimiz",
+      "desc": "Modern yazılım dünyasının en güçlü araçlarını kullanarak ölçeklenebilir, akıllı ve zırhlı temeller kuruyoruz.",
+      "t1Title": "Büyük Dil Modelleri (LLM) & RAG",
+      "t1Desc": "Özel veri kümeleriyle LLM fine-tuning (LoRA/QLoRA), vektör veritabanları (Chroma, Pinecone) ile RAG mimarisi ve otonom yapay zeka ajanları.",
+      "t2Title": "Sızma Testleri (Pentesting) & Denetim",
+      "t2Desc": "Web, API ve mobil uygulamalara yönelik proaktif sızma testleri, OWASP Top 10 denetimleri ve zafiyet analizi.",
+      "t3Title": "Ağ Güvenliği & MikroTik (RouterOS)",
+      "t3Desc": "MikroTik RouterOS tabanlı güvenlik duvarı (Firewall), paket filtreleme (Mangle), VLAN izolasyonu ve ağ zırhlaması.",
+      "t4Title": "VPN & Güvenli Tüneller (WireGuard)",
+      "t4Desc": "Yüksek performanslı WireGuard, IPsec ve OpenVPN tünelleri ile şubeler arası ve uzaktan güvenli Zero-Trust ağ erişimi.",
+      "t5Title": "Cihaz İçi Yapay Zeka (Edge AI)",
+      "t5Desc": "Hafif dil modelleri (SLM) ve NLP ile kullanıcı verisini dışarı aktarmadan cihaz üzerinde çalışan akıllı çıkarım motorları.",
+      "t6Title": "Uygulama Savunması & Hardening",
+      "t6Desc": "Kod karartma (Obfuscation), Anti-Tamper, root/jailbreak tespiti ve bellek manipülasyon savunması ile zırhlı uygulamalar.",
+      "t7Title": "Kriptografi & Veri Şifreleme",
+      "t7Desc": "AES-256, RSA asimetrik anahtarlama, SSL/TLS Pinning ve güvenli anahtar kasası yönetimi ile sıfır veri sızıntısı.",
+      "t8Title": "Çapraz Platform Mobil (Flutter)",
+      "t8Desc": "Tek kod tabanı ile iOS ve Android için 60/120 FPS akıcı, bellek optimizasyonlu ve modüler mobil mimariler."
+    },
+    "langSec": {
+      "tag": "KÜRESEL ERİŞİM & ÇOK DİLLİ DESTEK",
+      "title": "9 Farklı Dilde Kullanım",
+      "desc": "Dünya genelindeki tüm kullanıcılar için sağdan sola (RTL) okuma desteği de dahil olmak üzere kusursuz yerelleştirme deneyimi sunuyoruz."
+    },
+    "aboutSec": {
+      "title": "Sade, Akıllı ve Güvenli Yazılımlar",
+      "desc": "SREBSoftware olarak felsefemiz; karmaşık teknolojileri kullanıcı için zahmetsiz, akıllı ve tam korumalı deneyimlere dönüştürmektir. Performans, gizlilik ve güvenlikten ödün vermeden geleceği kodluyoruz.",
+      "tag1": "#TemizKod",
+      "tag2": "#LLMGeliştirme",
+      "tag3": "#YapayZeka",
+      "tag4": "#SiberGüvenlik",
+      "tag5": "#MikroTik"
+    },
+    "contactSec": {
+      "title": "Bir Projeniz mi Var?",
+      "desc": "Mobil uygulama, özel LLM / yapay zeka modeli veya siber güvenlik & MikroTik altyapı ihtiyaçlarınız için bizimle doğrudan iletişime geçin.",
+      "email": "srebsoftware@gmail.com"
+    },
+    "footer": {
+      "brandDesc": "Mobil Mühendislik · LLM & Yapay Zeka · Siber Savunma & MikroTik",
+      "navVakit": "Vakit Merkezi",
+      "privacy": "Gizlilik Politikası",
+      "contact": "İletişim",
+      "copy": "© 2026 SREBSoftware Studio. Tüm hakları saklıdır."
+    }
+  },
+  "en": {
+    "metaTitle": "SREBSoftware · Mobile Development, LLM & AI, Cyber Security",
+    "metaDesc": "SREBSoftware: High-performance mobile apps, Large Language Models (LLM), on-device AI, and MikroTik/Pentest cyber security solutions.",
+    "nav": {
+      "pillars": "Expertise",
+      "projects": "Projects",
+      "tech": "Capabilities",
+      "languages": "Languages",
+      "about": "About",
+      "contact": "Contact",
+      "flagshipBtn": "Vakit Merkezi"
+    },
+    "hero": {
+      "badge": "Mobile Software · AI & LLM · Cyber Security & MikroTik",
+      "titlePre": "Pioneering Mobile, ",
+      "titleGrad": "LLM & Artificial Intelligence",
+      "titlePost": "and Cyber Defense",
+      "lead": "We engineer tomorrow's digital ecosystem with ultra-smooth Flutter mobile apps, custom fine-tuned Large Language Models (LLMs), on-device AI, and MikroTik pentest cyber defense shields.",
+      "btnProjects": "Explore Projects",
+      "btnContact": "Get in Touch",
+      "stat1Val": "LLM+",
+      "stat1Lbl": "Custom LLM & AI",
+      "stat2Val": "SEC🛡️",
+      "stat2Lbl": "Pentesting & MikroTik",
+      "stat3Val": "18+",
+      "stat3Lbl": "Live Spiritual Tools",
+      "stat4Val": "9",
+      "stat4Lbl": "Global Languages"
+    },
+    "pillarsSec": {
+      "tag": "CORE ENGINEERING DISCIPLINES",
+      "title": "Areas of Expertise",
+      "desc": "Next-gen solutions crafted at the intersection of high-performance mobile, LLM & AI engineering, and proactive cyber security.",
+      "p1Badge": "MOBILE ENGINEERING",
+      "p1Title": "Cross-Platform & Peak Performance",
+      "p1Desc": "Crafting 60/120 FPS fluid, zero-memory-leak, offline-first mobile applications across iOS and Android with Flutter and Dart.",
+      "p1Tags": [
+        "Flutter & Dart",
+        "Offline-First",
+        "Haptics & Motion",
+        "9 Languages & RTL"
+      ],
+      "p2Badge": "AI & LLM DEVELOPMENT",
+      "p2Title": "Large Language Models & On-Device Intelligence",
+      "p2Desc": "Building proprietary enterprise LLMs, LoRA/QLoRA fine-tuning for open models, RAG vector architectures, autonomous AI agents, and zero-cloud-leak edge AI engines.",
+      "p2Tags": [
+        "LLM Development",
+        "LoRA Fine-Tuning",
+        "RAG & Vector DB",
+        "On-Device AI",
+        "Autonomous Agents"
+      ],
+      "p3Badge": "CYBER SECURITY & NETWORK",
+      "p3Title": "Pentesting, MikroTik & Cyber Defense",
+      "p3Desc": "Conducting web, API, and mobile penetration testing (pentesting), reverse engineering, code obfuscation, and enterprise MikroTik RouterOS firewall, VLAN segmentation, and WireGuard/IPsec VPNs.",
+      "p3Tags": [
+        "Pentesting",
+        "MikroTik RouterOS",
+        "Firewall & VLAN",
+        "WireGuard / IPsec",
+        "App Hardening",
+        "OWASP & Cryptography"
+      ]
+    },
+    "projectsSec": {
+      "tag": "FEATURED PORTFOLIO",
+      "title": "Products We've Built",
+      "desc": "Thoughtfully crafted digital solutions delivering meaningful everyday value to users worldwide.",
+      "flagBadge": "✨ FLAGSHIP · LIVE ON GOOGLE PLAY",
+      "flagTitle": "Vakit Merkezi",
+      "flagDesc": "All-in-one spiritual companion featuring precise Diyanet prayer times, full audio Quran recitation across 30 Juz, live compass Qibla finder, haptic tasbih counter, and 84-day habit heatmap.",
+      "flagTags": [
+        "Flutter & Dart",
+        "9 Languages & RTL",
+        "Diyanet API",
+        "Live Qibla",
+        "84-Day Heatmap",
+        "AdMob & IAP",
+        "Offline-First"
+      ],
+      "flagBtnDetails": "Explore Project Page",
+      "flagBtnPlay": "Download on Google Play",
+      "lab1Badge": "🧠 R&D & LLM LAB · IN DEVELOPMENT",
+      "lab1Title": "Enterprise LLM & On-Device AI Assistant",
+      "lab1Desc": "An air-gapped on-device LLM engine, vector-powered RAG knowledge base, and autonomous agent executing tasks with zero cloud leaks.",
+      "lab1Tags": [
+        "Custom LLM",
+        "RAG Architecture",
+        "Edge Inference",
+        "Zero-Cloud Leak"
+      ],
+      "lab2Badge": "🛡️ NETWORK & SEC LAB · IN DEVELOPMENT",
+      "lab2Title": "MikroTik & Security Automation Shield",
+      "lab2Desc": "Automated threat blocker, dynamic IP blacklist sync, port scan detection, and Zero-Trust VPN management suite for MikroTik RouterOS.",
+      "lab2Tags": [
+        "MikroTik RouterOS",
+        "Pentesting Tools",
+        "Firewall Automation",
+        "Zero-Trust"
+      ]
+    },
+    "techSec": {
+      "tag": "ENGINEERING STANDARDS",
+      "title": "Technologies & Capabilities",
+      "desc": "Harnessing modern software engineering to build resilient, intelligent, and fortified digital products.",
+      "t1Title": "Large Language Models (LLM) & RAG",
+      "t1Desc": "Custom dataset LLM fine-tuning (LoRA/QLoRA), vector search databases (Chroma, Pinecone), and autonomous AI multi-agent workflows.",
+      "t2Title": "Penetration Testing (Pentesting)",
+      "t2Desc": "Proactive security audits, web & mobile API pentesting, OWASP Top 10 compliance, and vulnerability mitigation.",
+      "t3Title": "Network Security & MikroTik RouterOS",
+      "t3Desc": "Enterprise firewall rule filtering, packet mangling, strict VLAN network isolation, and RouterOS hardening.",
+      "t4Title": "VPN & Secure Tunnels (WireGuard)",
+      "t4Desc": "High-speed WireGuard, IPsec, and OpenVPN point-to-point tunnels providing Zero-Trust remote connectivity.",
+      "t5Title": "On-Device Edge AI",
+      "t5Desc": "Small Language Models (SLM) and NLP inference running directly on mobile hardware without exposing user data.",
+      "t6Title": "Mobile App Hardening & Anti-Tamper",
+      "t6Desc": "DexGuard/obfuscation, root/jailbreak detection, dynamic hook interception, and binary integrity verification.",
+      "t7Title": "Cryptography & Data Protection",
+      "t7Desc": "AES-256 and asymmetric RSA encryption, SSL/TLS certificate pinning, and hardened mobile secure key storage.",
+      "t8Title": "Cross-Platform Mobile (Flutter)",
+      "t8Desc": "Single codebase powering native iOS and Android apps with 60/120 FPS fluid motion, caching, and modular architecture."
+    },
+    "langSec": {
+      "tag": "GLOBAL ACCESS & MULTILINGUAL",
+      "title": "Available in 9 Languages",
+      "desc": "Engineered from the ground up to support users worldwide with full Right-to-Left (RTL) localization."
+    },
+    "aboutSec": {
+      "title": "Clean, Intelligent & Fortified Software",
+      "desc": "At SREBSoftware, our mission is to transform intricate technology into effortless, secure, and brilliant user experiences. We write code with uncompromising respect for performance and privacy.",
+      "tag1": "#CleanCode",
+      "tag2": "#LLMDev",
+      "tag3": "#ArtificialIntelligence",
+      "tag4": "#CyberSecurity",
+      "tag5": "#MikroTik"
+    },
+    "contactSec": {
+      "title": "Have a Project in Mind?",
+      "desc": "Reach out to us for cross-platform mobile development, custom LLM / AI solutions, or MikroTik and cyber security consulting.",
+      "email": "srebsoftware@gmail.com"
+    },
+    "footer": {
+      "brandDesc": "Mobile Engineering · LLM & AI · Cyber Defense & MikroTik",
+      "navVakit": "Vakit Merkezi",
+      "privacy": "Privacy Policy",
+      "contact": "Contact",
+      "copy": "© 2026 SREBSoftware Studio. All rights reserved."
+    }
+  },
+  "ar": {
+    "metaTitle": "SREBSoftware · تطوير تطبيقات الجوال، نماذج اللغة (LLM) والذكاء الاصطناعي، الأمن السيبراني",
+    "metaDesc": "SREBSoftware: تطبيقات جوال عالية الأداء، نماذج لغوية كبيرة (LLM)، ذكاء اصطناعي محلي، وحلول أمن سيبراني واختبار اختراق وMikroTik.",
+    "nav": {
+      "pillars": "الخبرات",
+      "projects": "المشاريع",
+      "tech": "التقنيات",
+      "languages": "اللغات",
+      "about": "من نحن",
+      "contact": "اتصل بنا",
+      "flagshipBtn": "مركز الوقت"
+    },
+    "hero": {
+      "badge": "تطبيقات الجوال · الذكاء الاصطناعي و LLM · الأمن السيبراني و MikroTik",
+      "titlePre": "هندسة الجوال، ",
+      "titleGrad": "نماذج اللغة (LLM) والذكاء الاصطناعي",
+      "titlePost": "والدفاع السيبراني المتقدم",
+      "lead": "نبني تجارب الغد الرقمية عبر تطبيقات فلاتر فائقة السلاسة، وتدريب نماذج اللغة الكبيرة (LLM)، والذكاء الاصطناعي على الأجهزة، وحماية شبكات MikroTik واختبار الاختراق.",
+      "btnProjects": "استكشف المشاريع",
+      "btnContact": "تواصل معنا",
+      "stat1Val": "+LLM",
+      "stat1Lbl": "نماذج لغوية وذكاء اصطناعي",
+      "stat2Val": "🛡️SEC",
+      "stat2Lbl": "اختبار اختراق و MikroTik",
+      "stat3Val": "+18",
+      "stat3Lbl": "أداة عبادة حية",
+      "stat4Val": "9",
+      "stat4Lbl": "لغات عالمية مدعومة"
+    },
+    "pillarsSec": {
+      "tag": "تخصصاتنا الهندسية الأساسية",
+      "title": "مجالات الخبرة",
+      "desc": "حلول تقنية رائدة تجمع بين تطوير الجوال عالي الأداء، وهندسة نماذج LLM، والدفاع السيبراني الوقائي.",
+      "p1Badge": "هندسة تطبيقات الجوال",
+      "p1Title": "تطبيقات متعددة المنصات وفائقة السرعة",
+      "p1Desc": "تطوير تطبيقات iOS و Android عبر Flutter و Dart بسرعة 60/120 إطاراً في الثانية، دون تسريب للذاكرة، وتعمل بدون إنترنت بكفاءة أصلية.",
+      "p1Tags": [
+        "Flutter & Dart",
+        "بدون إنترنت",
+        "تفاعل لمسي وحركة",
+        "9 لغات مع RTL"
+      ],
+      "p2Badge": "الذكاء الاصطناعي ونماذج LLM",
+      "p2Title": "نماذج اللغة الكبيرة والذكاء على الجهاز",
+      "p2Desc": "تطوير نماذج لغوية مخصصة للمؤسسات، وضبط دقيق (LoRA/QLoRA)، ومعماريات RAG، ووكلاء أذكياء ذاتيين، ومحركات ذكاء محلي خالية من تسريب البيانات.",
+      "p2Tags": [
+        "تطوير LLM",
+        "ضبط LoRA",
+        "RAG وقواعد المتجهات",
+        "ذكاء محلي",
+        "وكلاء مستقلون"
+      ],
+      "p3Badge": "الأمن السيبراني والشبكات",
+      "p3Title": "اختبار الاختراق، MikroTik والدفاع",
+      "p3Desc": "اختبارات اختراق الويب والتطبيقات (Pentesting)، الهندسة العكسية، تشويش الأكواد، وتأمين شبكات MikroTik RouterOS مع جدران الحماية وشبكات WireGuard/IPsec.",
+      "p3Tags": [
+        "اختبار اختراق",
+        "MikroTik RouterOS",
+        "جدار حماية و VLAN",
+        "WireGuard / IPsec",
+        "تحصين التطبيقات",
+        "تشفير و OWASP"
+      ]
+    },
+    "projectsSec": {
+      "tag": "مشاريعنا المميزة",
+      "title": "المنتجات التي طورناها",
+      "desc": "حلول رقمية مصممة بعناية لتقديم فائدة حقيقية للمستخدمين حول العالم.",
+      "flagBadge": "✨ المشروع الرائد · متوفر الآن",
+      "flagTitle": "مركز الوقت (Vakit Merkezi)",
+      "flagDesc": "المساعد الإيماني الشامل: مواقيت صلاة دقيقة، تلاوة صوتية للقرآن الكريم كاملاً 30 جزءاً، بوصلة القبلة الحية، مسبحة إلكترونية بنبض لمسي، وجدول عبادات تفاعلي لـ 84 يوماً.",
+      "flagTags": [
+        "Flutter & Dart",
+        "9 لغات مع RTL",
+        "مواقيت دقيقة",
+        "قبلة حية",
+        "خريطة عبادات 84 يوماً",
+        "إعلانات ومشتريات",
+        "يعمل بدون إنترنت"
+      ],
+      "flagBtnDetails": "صفحة المشروع الكاملة",
+      "flagBtnPlay": "تحميل من Google Play",
+      "lab1Badge": "🧠 مختبر LLM والأبحاث · قيد التطوير",
+      "lab1Title": "مساعد LLM المؤسسي والذكاء الاصطناعي المحلي",
+      "lab1Desc": "محرك نماذج لغوية محلي يعمل دون اتصال سحابي، وقاعدة بيانات معرفية RAG، ووكيل ذكي ينفذ المهام بخصوصية تامة.",
+      "lab1Tags": [
+        "نماذج LLM مخصصة",
+        "معمارية RAG",
+        "استدلال محلي",
+        "حماية البيانات"
+      ],
+      "lab2Badge": "🛡️ مختبر الشبكات والأمن · قيد التطوير",
+      "lab2Title": "درع MikroTik وأتمتة الأمان",
+      "lab2Desc": "أداة أتمتة لراوترات MikroTik RouterOS للتصدي للتهديدات تلقائياً، ومزامنة القوائم السوداء، وإدارة شبكات VPN وفق مبدأ Zero-Trust.",
+      "lab2Tags": [
+        "MikroTik RouterOS",
+        "أدوات الاختراق",
+        "أتمتة الجدار الناري",
+        "Zero-Trust"
+      ]
+    },
+    "techSec": {
+      "tag": "معايير الهندسة المتقدمة",
+      "title": "التقنيات والقدرات",
+      "desc": "نستعين بأحدث الأدوات البرمجية لبناء أنظمة مرنة، ذكية ومحصنة بالكامل.",
+      "t1Title": "نماذج اللغة الكبيرة (LLM) و RAG",
+      "t1Desc": "تدريب وضبط نماذج LLM بالبيانات الخاصة، ودمج قواعد بيانات المتجهات لنظم RAG ووكلاء الذكاء الاصطناعي.",
+      "t2Title": "اختبار الاختراق والتدقيق الأمني",
+      "t2Desc": "فحص استباقي للويب والـ APIs وتطبيقات الجوال، وتحليل الثغرات وفق معايير OWASP Top 10.",
+      "t3Title": "أمن الشبكات و MikroTik RouterOS",
+      "t3Desc": "إعداد جدران الحماية، وتصفية الحزم (Mangle)، وعزل الشبكات الافتراضية VLAN وتحصين الشبكات.",
+      "t4Title": "الشبكات الافتراضية والأنفاق الآمنة (WireGuard)",
+      "t4Desc": "أنفاق WireGuard و IPsec فائقة السرعة للربط الآمن بين الفروع والعمل عن بعد بنظام Zero-Trust.",
+      "t5Title": "الذكاء الاصطناعي على الحافة (Edge AI)",
+      "t5Desc": "نماذج لغوية خفيفة ومعالجة لغات طبيعية تعمل مباشرة على أجهزة المستخدمين دون كشف بياناتهم.",
+      "t6Title": "تحصين التطبيقات ومقاومة العبث",
+      "t6Desc": "تشويش الكود (Obfuscation)، وكشف كسر الحماية (Root/Jailbreak)، وحماية الذاكرة من التلاعب.",
+      "t7Title": "التشفير وحماية البيانات",
+      "t7Desc": "تشفير AES-256 و RSA، وتثبيت شهادات SSL/TLS Pinning، وإدارة آمنة لمفاتيح التشفير.",
+      "t8Title": "تطوير الجوال متعدد المنصات (Flutter)",
+      "t8Desc": "بناء تطبيقات iOS و Android من قاعدة كود واحدة بأداء أصلي وسلاسة 60/120 إطاراً في الثانية."
+    },
+    "langSec": {
+      "tag": "انتشار عالمي ودعم متعدد اللغات",
+      "title": "متوفر بـ 9 لغات عالمية",
+      "desc": "مصمم ومطور من البداية لخدمة المستخدمين في كافة أنحاء العالم مع دعم كامل للقراءة من اليمين إلى اليسار (RTL)."
+    },
+    "aboutSec": {
+      "title": "برمجيات أنيقة، ذكية ومحصنة",
+      "desc": "فلسفتنا في SREBSoftware هي تحويل التقنيات المعقدة إلى أدوات بديهية، فائقة الذكاء، ومحاطة بأقصى درجات الحماية دون التنازل عن السرعة والخصوصية.",
+      "tag1": "#كود_نظيف",
+      "tag2": "#تطوير_LLM",
+      "tag3": "#ذكاء_اصطناعي",
+      "tag4": "#أمن_سيبراني",
+      "tag5": "#MikroTik"
+    },
+    "contactSec": {
+      "title": "هل لديك فكرة أو مشروع؟",
+      "desc": "تواصل معنا لتطوير تطبيقات الجوال، أو بناء نماذج لغوية وذكاء اصطناعي خاص، أو استشارات أمان الشبكات و MikroTik.",
+      "email": "srebsoftware@gmail.com"
+    },
+    "footer": {
+      "brandDesc": "هندسة الجوال · نماذج اللغة والذكاء الاصطناعي · الدفاع السيبراني و MikroTik",
+      "navVakit": "مركز الوقت",
+      "privacy": "سياسة الخصوصية",
+      "contact": "اتصل بنا",
+      "copy": "© 2026 SREBSoftware Studio. جميع الحقوق محفوظة."
+    }
+  },
+  "id": {
+    "metaTitle": "SREBSoftware · Aplikasi Mobile, LLM & AI, Keamanan Siber",
+    "metaDesc": "SREBSoftware: Aplikasi mobile performa tinggi, Model Bahasa Besar (LLM), AI pada perangkat, dan solusi keamanan siber MikroTik/Pentest.",
+    "nav": {
+      "pillars": "Keahlian",
+      "projects": "Proyek",
+      "tech": "Kemampuan",
+      "languages": "Bahasa",
+      "about": "Tentang",
+      "contact": "Kontak",
+      "flagshipBtn": "Vakit Merkezi"
+    },
+    "hero": {
+      "badge": "Perangkat Lunak Mobile · AI & LLM · Keamanan Siber & MikroTik",
+      "titlePre": "Membangun Mobile, ",
+      "titleGrad": "LLM & Kecerdasan Buatan",
+      "titlePost": "dan Pertahanan Siber",
+      "lead": "Kami merancang ekosistem digital masa depan dengan aplikasi Flutter performa tinggi, pelatihan Model Bahasa Besar (LLM), AI pada perangkat, serta benteng pertahanan MikroTik dan pentesting.",
+      "btnProjects": "Lihat Proyek",
+      "btnContact": "Hubungi Kami",
+      "stat1Val": "LLM+",
+      "stat1Lbl": "LLM Khusus & AI",
+      "stat2Val": "SEC🛡️",
+      "stat2Lbl": "Pentesting & MikroTik",
+      "stat3Val": "18+",
+      "stat3Lbl": "Fitur Ibadah Aktif",
+      "stat4Val": "9",
+      "stat4Lbl": "Bahasa Global"
+    },
+    "pillarsSec": {
+      "tag": "DISIPLIN TEKNIK UTAMA",
+      "title": "Bidang Keahlian",
+      "desc": "Solusi teknologi generasi baru yang memadukan pengembangan mobile berkecepatan tinggi, rekayasa LLM & AI, dan keamanan siber proaktif.",
+      "p1Badge": "REKAYASA MOBILE",
+      "p1Title": "Lintas Platform & Performa Puncak",
+      "p1Desc": "Membangun aplikasi iOS dan Android dengan Flutter & Dart yang mulus di 60/120 FPS, tanpa kebocoran memori, dan mengutamakan mode offline.",
+      "p1Tags": [
+        "Flutter & Dart",
+        "Offline-First",
+        "Haptik & Animasi",
+        "9 Bahasa & RTL"
+      ],
+      "p2Badge": "AI & PENGEMBANGAN LLM",
+      "p2Title": "Model Bahasa Besar & AI pada Perangkat",
+      "p2Desc": "Mengembangkan LLM khusus perusahaan, fine-tuning LoRA/QLoRA untuk model terbuka, arsitektur vektor RAG, agen AI otonom, dan mesin AI lokal tanpa kebocoran data.",
+      "p2Tags": [
+        "Pengembangan LLM",
+        "Fine-Tuning LoRA",
+        "RAG & Vector DB",
+        "On-Device AI",
+        "Agen Otonom"
+      ],
+      "p3Badge": "KEAMANAN SIBER & JARINGAN",
+      "p3Title": "Pentesting, MikroTik & Pertahanan Siber",
+      "p3Desc": "Uji penetrasi web, API, dan aplikasi seluler (Pentesting), rekayasa balik, pengaburan kode, segmentasi jaringan MikroTik RouterOS (VLAN, Firewall, WireGuard/IPsec VPN).",
+      "p3Tags": [
+        "Pentesting",
+        "MikroTik RouterOS",
+        "Firewall & VLAN",
+        "WireGuard / IPsec",
+        "App Hardening",
+        "OWASP & Kriptografi"
+      ]
+    },
+    "projectsSec": {
+      "tag": "PORTOFOLIO UNGGULAN",
+      "title": "Produk yang Kami Bangun",
+      "desc": "Solusi digital yang dirancang cermat untuk memberikan nilai nyata bagi pengguna sehari-hari.",
+      "flagBadge": "✨ UTAMA · TAYANG DI GOOGLE PLAY",
+      "flagTitle": "Vakit Merkezi",
+      "flagDesc": "Asisten ibadah lengkap dengan jadwal sholat akurat, murottal audio 30 Juz lengkap, kompas kiblat langsung, tasbih digital dengan getaran haptik, dan peta kebiasaan 84 hari.",
+      "flagTags": [
+        "Flutter & Dart",
+        "9 Bahasa & RTL",
+        "Jadwal Akurat",
+        "Kiblat Langsung",
+        "Heatmap 84 Hari",
+        "AdMob & IAP",
+        "Mode Offline"
+      ],
+      "flagBtnDetails": "Halaman Detail Proyek",
+      "flagBtnPlay": "Unduh di Google Play",
+      "lab1Badge": "🧠 R&D & LLM LAB · DALAM PENGEMBANGAN",
+      "lab1Title": "LLM Perusahaan & Asisten AI pada Perangkat",
+      "lab1Desc": "Mesin LLM lokal yang aman untuk data sensitif perusahaan, basis pengetahuan RAG berbasis vektor, dan agen cerdas otonom tanpa kirim data ke cloud.",
+      "lab1Tags": [
+        "LLM Khusus",
+        "Arsitektur RAG",
+        "Edge Inference",
+        "Zero-Cloud Leak"
+      ],
+      "lab2Badge": "🛡️ NETWORK & SEC LAB · DALAM PENGEMBANGAN",
+      "lab2Title": "Perisai Otomasi Keamanan MikroTik",
+      "lab2Desc": "Alat pencegahan ancaman otomatis untuk MikroTik RouterOS, sinkronisasi daftar hitam IP dinamis, dan manajemen VPN Zero-Trust.",
+      "lab2Tags": [
+        "MikroTik RouterOS",
+        "Alat Pentesting",
+        "Otomasi Firewall",
+        "Zero-Trust"
+      ]
+    },
+    "techSec": {
+      "tag": "STANDAR REKAYASA",
+      "title": "Teknologi & Kemampuan Kami",
+      "desc": "Memanfaatkan alat terbaik untuk membangun fondasi perangkat lunak yang tangguh, cerdas, dan terlindungi.",
+      "t1Title": "Model Bahasa Besar (LLM) & RAG",
+      "t1Desc": "Fine-tuning LLM dengan data khusus (LoRA/QLoRA), basis data vektor (Chroma, Pinecone), dan alur kerja agen otonom.",
+      "t2Title": "Uji Penetrasi (Pentesting) & Audit",
+      "t2Desc": "Audit keamanan proaktif pada web, API, dan aplikasi seluler, pemenuhan standar OWASP Top 10 dan mitigasi kerentanan.",
+      "t3Title": "Keamanan Jaringan & MikroTik RouterOS",
+      "t3Desc": "Konfigurasi firewall MikroTik RouterOS, penyaringan paket (Mangle), isolasi VLAN, dan pengerasan jaringan.",
+      "t4Title": "VPN & Terowongan Aman (WireGuard)",
+      "t4Desc": "Koneksi WireGuard, IPsec, dan OpenVPN berkecepatan tinggi untuk akses jarak jauh yang aman berbasis Zero-Trust.",
+      "t5Title": "AI pada Perangkat (Edge AI)",
+      "t5Desc": "Model bahasa ringan (SLM) dan pemrosesan bahasa alami yang berjalan langsung di ponsel tanpa membocorkan data.",
+      "t6Title": "Penguatan Aplikasi (App Hardening)",
+      "t6Desc": "Pengaburan kode, deteksi root/jailbreak, pencegahan injeksi dinamis, dan verifikasi integritas biner.",
+      "t7Title": "Kriptografi & Perlindungan Data",
+      "t7Desc": "Enkripsi AES-256 dan RSA, penyematan sertifikat SSL/TLS Pinning, serta penyimpanan kunci terenkripsi.",
+      "t8Title": "Pengembangan Lintas Platform (Flutter)",
+      "t8Desc": "Satu basis kode untuk aplikasi iOS dan Android dengan animasi mulus 60/120 FPS dan arsitektur modular."
+    },
+    "langSec": {
+      "tag": "JANGKAUAN GLOBAL",
+      "title": "Tersedia dalam 9 Bahasa",
+      "desc": "Dirancang secara inklusif untuk seluruh dunia dengan lokalisasi mendalam dan dukungan teks kanan-ke-kiri (RTL)."
+    },
+    "aboutSec": {
+      "title": "Perangkat Lunak Bersih, Cerdas & Aman",
+      "desc": "Filosofi SREBSoftware adalah mengubah teknologi rumit menjadi pengalaman yang mudah, cerdas, dan terlindungi penuh tanpa mengorbankan performa dan privasi pengguna.",
+      "tag1": "#CleanCode",
+      "tag2": "#PengembanganLLM",
+      "tag3": "#KecerdasanBuatan",
+      "tag4": "#KeamananSiber",
+      "tag5": "#MikroTik"
+    },
+    "contactSec": {
+      "title": "Punya Ide atau Proyek?",
+      "desc": "Hubungi kami untuk pengembangan aplikasi mobile, model LLM & kecerdasan buatan khusus, atau audit keamanan MikroTik.",
+      "email": "srebsoftware@gmail.com"
+    },
+    "footer": {
+      "brandDesc": "Rekayasa Mobile · LLM & AI · Pertahanan Siber & MikroTik",
+      "navVakit": "Vakit Merkezi",
+      "privacy": "Kebijakan Privasi",
+      "contact": "Kontak",
+      "copy": "© 2026 SREBSoftware Studio. Hak cipta dilindungi undang-undang."
+    }
+  },
+  "ms": {
+    "metaTitle": "SREBSoftware · Aplikasi Mudah Alih, LLM & AI, Keselamatan Siber",
+    "metaDesc": "SREBSoftware: Aplikasi mudah alih berprestasi tinggi, Model Bahasa Besar (LLM), AI pada peranti, dan keselamatan siber MikroTik/Pentest.",
+    "nav": {
+      "pillars": "Kepakaran",
+      "projects": "Projek",
+      "tech": "Keupayaan",
+      "languages": "Bahasa",
+      "about": "Tentang Kami",
+      "contact": "Hubungi",
+      "flagshipBtn": "Vakit Merkezi"
+    },
+    "hero": {
+      "badge": "Perisian Mudah Alih · AI & LLM · Keselamatan Siber & MikroTik",
+      "titlePre": "Menerajui Mudah Alih, ",
+      "titleGrad": "LLM & Kecerdasan Buatan",
+      "titlePost": "dan Pertahanan Siber",
+      "lead": "Kami membina ekosistem digital masa hadapan dengan aplikasi Flutter lancar, model bahasa besar (LLM) khusus, AI pada peranti, dan kubu pertahanan MikroTik serta ujian penembusan.",
+      "btnProjects": "Lihat Projek",
+      "btnContact": "Hubungi Kami",
+      "stat1Val": "LLM+",
+      "stat1Lbl": "LLM Khusus & AI",
+      "stat2Val": "SEC🛡️",
+      "stat2Lbl": "Pentesting & MikroTik",
+      "stat3Val": "18+",
+      "stat3Lbl": "Ciri Ibadah Langsung",
+      "stat4Val": "9",
+      "stat4Lbl": "Bahasa Global"
+    },
+    "pillarsSec": {
+      "tag": "DISIPLIN KEJURUTERAAN UTAMA",
+      "title": "Bidang Kepakaran",
+      "desc": "Penyelesaian teknologi moden yang menggabungkan pembangunan aplikasi pantas, kejuruteraan LLM & AI, dan keselamatan siber proaktif.",
+      "p1Badge": "KEJURUTERAAN MUDAH ALIH",
+      "p1Title": "Pelbagai Platform & Prestasi Tertinggi",
+      "p1Desc": "Membangunkan aplikasi iOS dan Android melalui Flutter & Dart yang lancar pada 60/120 FPS, bebas kebocoran memori dan utamakan mod luar talian.",
+      "p1Tags": [
+        "Flutter & Dart",
+        "Luar Talian",
+        "Haptik & Gerakan",
+        "9 Bahasa & RTL"
+      ],
+      "p2Badge": "AI & PEMBANGUNAN LLM",
+      "p2Title": "Model Bahasa Besar & AI pada Peranti",
+      "p2Desc": "Membangunkan LLM perusahaan tersuai, penalaan halus LoRA/QLoRA, seni bina vektor RAG, ejen AI berautonomi dan enjin AI setempat tanpa kebocoran awan.",
+      "p2Tags": [
+        "Pembangunan LLM",
+        "Penalaan LoRA",
+        "RAG & Vector DB",
+        "AI pada Peranti",
+        "Ejen Autonomi"
+      ],
+      "p3Badge": "KESELAMATAN SIBER & RANGKAIAN",
+      "p3Title": "Pentesting, MikroTik & Pertahanan Siber",
+      "p3Desc": "Ujian penembusan web, API dan aplikasi mudah alih (Pentesting), kejuruteraan terbalik, pengaburan kod, dan pengasingan rangkaian MikroTik RouterOS (VLAN, Firewall, VPN WireGuard/IPsec).",
+      "p3Tags": [
+        "Pentesting",
+        "MikroTik RouterOS",
+        "Firewall & VLAN",
+        "WireGuard / IPsec",
+        "Pengukuhan Aplikasi",
+        "Kriptografi & OWASP"
+      ]
+    },
+    "projectsSec": {
+      "tag": "PORTFOLIO PILIHAN",
+      "title": "Produk yang Dibina",
+      "desc": "Penyelesaian digital yang direka dengan teliti untuk memberi manfaat harian kepada pengguna.",
+      "flagBadge": "✨ PRODUK UTAMA · KINI DI GOOGLE PLAY",
+      "flagTitle": "Vakit Merkezi",
+      "flagDesc": "Pembantu ibadah lengkap: waktu solat tepat, bacaan audio al-Quran 30 Juz, kompas kiblat langsung, tasbih digital dengan maklum balas haptik, dan peta tabiat 84 hari.",
+      "flagTags": [
+        "Flutter & Dart",
+        "9 Bahasa & RTL",
+        "Waktu Tepat",
+        "Kiblat Langsung",
+        "Heatmap 84 Hari",
+        "AdMob & IAP",
+        "Mod Luar Talian"
+      ],
+      "flagBtnDetails": "Halaman Butiran Projek",
+      "flagBtnPlay": "Muat Turun di Google Play",
+      "lab1Badge": "🧠 R&D & MAKMAL LLM · SEDANG DIBANGUNKAN",
+      "lab1Title": "LLM Perusahaan & Pembantu AI pada Peranti",
+      "lab1Desc": "Enjin LLM tempatan yang selamat untuk data sensitif, pangkalan pengetahuan RAG berasaskan vektor, dan ejen pintar autonomi tanpa hantar data ke awan.",
+      "lab1Tags": [
+        "LLM Khusus",
+        "Seni Bina RAG",
+        "Inferens Setempat",
+        "Zero-Cloud Leak"
+      ],
+      "lab2Badge": "🛡️ NETWORK & SEC LAB · SEDANG DIBANGUNKAN",
+      "lab2Title": "Perisai Automasi Keselamatan MikroTik",
+      "lab2Desc": "Alat penyekatan ancaman automatik untuk MikroTik RouterOS, penyegerakan senarai hitam IP dinamik dan pengurusan VPN Zero-Trust.",
+      "lab2Tags": [
+        "MikroTik RouterOS",
+        "Alat Pentesting",
+        "Automasi Firewall",
+        "Zero-Trust"
+      ]
+    },
+    "techSec": {
+      "tag": "PIAWAIAN KEJURUTERAAN",
+      "title": "Teknologi & Keupayaan Kami",
+      "desc": "Menggunakan peralatan terbaik untuk membina sistem perisian yang pintar, kukuh dan selamat.",
+      "t1Title": "Model Bahasa Besar (LLM) & RAG",
+      "t1Desc": "Penalaan halus LLM dengan set data khusus (LoRA/QLoRA), pangkalan data vektor (Chroma, Pinecone), dan ejen pintar autonomi.",
+      "t2Title": "Ujian Penembusan (Pentesting) & Audit",
+      "t2Desc": "Audit keselamatan proaktif pada web, API dan aplikasi mudah alih, pematuhan OWASP Top 10 dan mitigasi kelemahan.",
+      "t3Title": "Keselamatan Rangkaian & MikroTik RouterOS",
+      "t3Desc": "Konfigurasi tembok api MikroTik RouterOS, penapisan paket (Mangle), pengasingan VLAN dan pengukuhan rangkaian.",
+      "t4Title": "VPN & Terowong Selamat (WireGuard)",
+      "t4Desc": "Sambungan berkelajuan tinggi WireGuard, IPsec dan OpenVPN untuk akses jauh selamat berkonsepkan Zero-Trust.",
+      "t5Title": "AI pada Peranti (Edge AI)",
+      "t5Desc": "Model bahasa ringan (SLM) dan pemprosesan bahasa semula jadi yang berjalan terus pada peranti tanpa menjejaskan privasi.",
+      "t6Title": "Pengukuhan Aplikasi (App Hardening)",
+      "t6Desc": "Pengaburan kod, pengesanan root/jailbreak, pencegahan manipulasi ingatan dan pengesahan integriti binari.",
+      "t7Title": "Kriptografi & Perlindungan Data",
+      "t7Desc": "Penyulitan AES-256 dan RSA, penyematan sijil SSL/TLS Pinning, dan pengurusan storan kunci selamat.",
+      "t8Title": "Pembangunan Pelbagai Platform (Flutter)",
+      "t8Desc": "Satu kod sumber untuk iOS dan Android dengan animasi lancar 60/120 FPS dan seni bina modular."
+    },
+    "langSec": {
+      "tag": "CAPAIAN GLOBAL",
+      "title": "Tersedia dalam 9 Bahasa",
+      "desc": "Dibina khusus untuk menghubungkan pengguna di seluruh dunia dengan sokongan penuh teks kanan-ke-kiri (RTL)."
+    },
+    "aboutSec": {
+      "title": "Perisian Bersih, Pintar & Selamat",
+      "desc": "Falsafah kami di SREBSoftware adalah mengubah teknologi kompleks menjadi pengalaman yang mudah dan selamat tanpa mengorbankan privasi dan prestasi.",
+      "tag1": "#KodBersih",
+      "tag2": "#PembangunanLLM",
+      "tag3": "#KecerdasanBuatan",
+      "tag4": "#KeselamatanSiber",
+      "tag5": "#MikroTik"
+    },
+    "contactSec": {
+      "title": "Ada Projek untuk Dibincangkan?",
+      "desc": "Hubungi kami untuk pembangunan aplikasi mudah alih, model LLM / AI khusus, atau perundingan keselamatan MikroTik.",
+      "email": "srebsoftware@gmail.com"
+    },
+    "footer": {
+      "brandDesc": "Kejuruteraan Mudah Alih · LLM & AI · Pertahanan Siber & MikroTik",
+      "navVakit": "Vakit Merkezi",
+      "privacy": "Dasar Privasi",
+      "contact": "Hubungi",
+      "copy": "© 2026 SREBSoftware Studio. Hak cipta terpelihara."
+    }
+  },
+  "ur": {
+    "metaTitle": "SREBSoftware · موبائل سافٹ ویئر، ایل ایل ایم اور اے آئی، سائبر سیکیورٹی",
+    "metaDesc": "SREBSoftware: اعلی کارکردگی والی موبائل ایپس، بڑے لسان ماڈلز (LLM)، ڈیوائس پر اے آئی، اور مائیکروٹک و پینٹسٹ سائبر سیکیورٹی۔",
+    "nav": {
+      "pillars": "مہارتیں",
+      "projects": "منصوبے",
+      "tech": "صلاحیتیں",
+      "languages": "زبانیں",
+      "about": "ہمارے بارے میں",
+      "contact": "رابطہ کریں",
+      "flagshipBtn": "وقت مرکزی"
+    },
+    "hero": {
+      "badge": "موبائل سافٹ ویئر · اے آئی اور ایل ایل ایم · سائبر سیکیورٹی اور مائیکروٹک",
+      "titlePre": "موبائل، ",
+      "titleGrad": "ایل ایل ایم اور مصنوعی ذہانت",
+      "titlePost": "اور سائبر دفاع کا سنگ میل",
+      "lead": "ہم فلٹر کی تیز رفتار ایپس، خصوصی لارج لینگویج ماڈلز (LLM)، آن ڈیوائس اے آئی، اور مائیکروٹک و پینٹیسٹنگ سائبر ڈیفنس کے ساتھ مستقبل کی ڈیجیٹل دنیا تشکیل دے رہے ہیں۔",
+      "btnProjects": "منصوبے دیکھیں",
+      "btnContact": "رابطہ کریں",
+      "stat1Val": "+LLM",
+      "stat1Lbl": "خصوصی ایل ایل ایم اور اے آئی",
+      "stat2Val": "🛡️SEC",
+      "stat2Lbl": "پینٹیسٹنگ اور مائیکروٹک",
+      "stat3Val": "+18",
+      "stat3Lbl": "لائیو عبادات کے آلات",
+      "stat4Val": "9",
+      "stat4Lbl": "عالمی زبانوں کی سپورٹ"
+    },
+    "pillarsSec": {
+      "tag": "بنیادی انجینئرنگ کے شعبے",
+      "title": "ہمارے شعبہ جات",
+      "desc": "اعلی کارکردگی والے موبائل ڈیولپمنٹ، ایل ایل ایم اور اے آئی، اور پیشگی سائبر سیکیورٹی کا شاندار امتزاج۔",
+      "p1Badge": "موبائل انجینئرنگ",
+      "p1Title": "کراس پلیٹ فارم اور بے مثال کارکردگی",
+      "p1Desc": "فلٹر اور ڈارٹ کے ذریعے iOS اور Android کے لیے 60/120 فریم فی سیکنڈ تیز رفتار، میموری کے ضیاع سے پاک اور آف لائن ایپس کی تیاری۔",
+      "p1Tags": [
+        "Flutter & Dart",
+        "آف لائن سب سے پہلے",
+        "ہپٹک اور اینیمیشن",
+        "9 زبانیں مع RTL"
+      ],
+      "p2Badge": "مصنوعی ذہانت اور ایل ایل ایم",
+      "p2Title": "بڑے لسان ماڈلز اور ڈیوائس پر ذہانت",
+      "p2Desc": "اداروں کے لیے مخصوص LLM ماڈلز کی تیاری، اوپن سورس ماڈلز پر LoRA/QLoRA فائن ٹیوننگ، RAG ویکٹر نظام، اور کلاؤڈ لیک سے محفوظ لوکل اے آئی۔",
+      "p2Tags": [
+        "ایل ایل ایم ڈیولپمنٹ",
+        "LoRA فائن ٹیوننگ",
+        "RAG و ویکٹر ڈی بی",
+        "آن ڈیوائس اے آئی",
+        "خود مختار ایجنٹس"
+      ],
+      "p3Badge": "سائبر سیکیورٹی اور نیٹ ورک",
+      "p3Title": "پینٹیسٹنگ، مائیکروٹک اور دفاع",
+      "p3Desc": "ویب، API اور موبائل پینٹیسٹنگ، ریورس انجینئرنگ، کوڈ سیکیورٹی، اور مائیکروٹک RouterOS کے ساتھ نیٹ ورک سیگمنٹیشن اور WireGuard/IPsec VPN۔",
+      "p3Tags": [
+        "پینٹیسٹنگ (سیکیورٹی ٹیسٹ)",
+        "مائیکروٹک RouterOS",
+        "فائر وال و VLAN",
+        "WireGuard / IPsec",
+        "ایپ سیکیورٹی",
+        "کرپٹوگرافی و OWASP"
+      ]
+    },
+    "projectsSec": {
+      "tag": "نمایاں پورٹ فولیو",
+      "title": "ہماری تیار کردہ پروڈکٹس",
+      "desc": "صارفین کی روزمرہ زندگی کو آسان اور بامقصد بنانے والے ڈیجیٹل شاہکار۔",
+      "flagBadge": "✨ فلیگ شپ پروجیکٹ · گوگل پلے پر لائیو",
+      "flagTitle": "وقت مرکزی (Vakit Merkezi)",
+      "flagDesc": "جامع عبادات کا معاون: درست اوقات نماز، 30 پاروں پر مشتمل آڈیو قرآن، لائیو قبلہ کمپاس، ہپٹک تسبیح کاؤنٹر، اور 84 دنوں کا حرارتی چارٹ۔",
+      "flagTags": [
+        "Flutter & Dart",
+        "9 زبانیں مع RTL",
+        "درست اوقات",
+        "لائیو قبلہ",
+        "84 روزہ ہیٹ میپ",
+        "ایڈموب اور پرو",
+        "آف لائن مکمل سپورٹ"
+      ],
+      "flagBtnDetails": "منصوبے کی مکمل تفصیل",
+      "flagBtnPlay": "گوگل پلے سے ڈاؤن لوڈ کریں",
+      "lab1Badge": "🧠 آر اینڈ ڈی و ایل ایل ایم لیب · زیر تکمیل",
+      "lab1Title": "کارپوریٹ ایل ایل ایم اور آن ڈیوائس اے آئی اسسٹنٹ",
+      "lab1Desc": "حساس ڈیٹا کے لیے محفوظ لوکل ایل ایل ایم انجن، RAG پر مبنی نالج بیس، اور کلاؤڈ پر انحصار کیے بغیر کام کرنے والا خودمختار اے آئی ایجنٹ۔",
+      "lab1Tags": [
+        "خصوصی ایل ایل ایم",
+        "RAG آرکیٹیکچر",
+        "ایج انفرنس",
+        "زیرو کلاؤڈ لیک"
+      ],
+      "lab2Badge": "🛡️ نیٹ ورک و سیکیورٹی لیب · زیر تکمیل",
+      "lab2Title": "مائیکروٹک و سیکیورٹی آٹومیشن شیلڈ",
+      "lab2Desc": "مائیکروٹک RouterOS کے لیے خودکار خطرات کی روک تھام، متحرک IP بلیک لسٹ ہم آہنگی، اور زیرو ٹرسٹ VPN مینجمنٹ سسٹم۔",
+      "lab2Tags": [
+        "مائیکروٹک RouterOS",
+        "پینٹیسٹنگ ٹولز",
+        "فائر وال آٹومیشن",
+        "زیرو ٹرسٹ"
+      ]
+    },
+    "techSec": {
+      "tag": "انجینئرنگ کے معیارات",
+      "title": "ٹیکنالوجیز اور ہماری مہارتیں",
+      "desc": "جدید ٹیکنالوجیز کے ذریعے پائیدار، ذہین اور محفوظ ترین سافٹ ویئر فاؤنڈیشنز کی تعمیر۔",
+      "t1Title": "لارج لینگویج ماڈلز (LLM) اور RAG",
+      "t1Desc": "خصوصی ڈیٹا پر LLM فائن ٹیوننگ (LoRA/QLoRA)، ویکٹر ڈیٹا بیسز (Chroma, Pinecone) اور خود مختار اے آئی ایجنٹس۔",
+      "t2Title": "پینٹریشن ٹیسٹنگ (پینٹیسٹنگ)",
+      "t2Desc": "ویب، موبائل اور APIs پر حفاظتی ٹیسٹ، OWASP Top 10 سیکیورٹی آڈٹ اور کمزوریوں کا تدارک۔",
+      "t3Title": "نیٹ ورک سیکیورٹی اور مائیکروٹک RouterOS",
+      "t3Desc": "مائیکروٹک فائر وال فلٹرنگ، پیکٹ مینگلنگ، سخت VLAN نیٹ ورک تنہائی اور راؤٹر کو محفوظ بنانا۔",
+      "t4Title": "وی پی این اور محفوظ ٹنلز (WireGuard)",
+      "t4Desc": "تیز رفتار WireGuard، IPsec اور OpenVPN ٹنلز کے ذریعے دفاتر اور ریموٹ ورکرز کے لیے زیرو ٹرسٹ کنیکٹیویٹی۔",
+      "t5Title": "آن ڈیوائس ایج اے آئی (Edge AI)",
+      "t5Desc": "چھوٹے لسان ماڈلز اور نیچرل لینگویج پروسیسنگ جو صارفین کے ڈیٹا کو فون سے باہر بھیجے بغیر کام کرتے ہیں۔",
+      "t6Title": "ایپ ہارڈننگ اور اینٹی ٹمپر",
+      "t6Desc": "کوڈ اوبفوسکیشن، روٹ/جیل بریک کا پتہ لگانا، میموری پروٹیکشن اور بائنری سالمیت کی تصدیق۔",
+      "t7Title": "کرپٹوگرافی اور ڈیٹا سیکیورٹی",
+      "t7Desc": "AES-256 اور RSA انکرپشن، SSL/TLS پننگ، اور محفوظ موبائل کیز اسٹوریج۔",
+      "t8Title": "کراس پلیٹ فارم موبائل (Flutter)",
+      "t8Desc": "ایک کوڈ بیس سے iOS اور Android کے لیے 60/120 فریم فی سیکنڈ پر رواں، ماڈیولر اور بہترین کارکردگی والی ایپس۔"
+    },
+    "langSec": {
+      "tag": "عالمی رسائی اور کثیر لسانی معاونت",
+      "title": "9 زبانوں میں دستیاب",
+      "desc": "دنیا بھر کے تمام صارفین کے لیے دائیں سے بائیں (RTL) زبانوں کی مکمل اور خوبصورت معاونت۔"
+    },
+    "aboutSec": {
+      "title": "سادہ، ذہین اور محفوظ سافٹ ویئر",
+      "desc": "SREBSoftware میں ہمارا مقصد پیچیدہ ٹیکنالوجیز کو صارفین کے لیے آسان، انتہائی ذہین اور مکمل طور پر محفوظ تجربات میں بدلنا ہے۔ ہم رفتار اور رازداری پر کبھی سمجھوتہ نہیں کرتے۔",
+      "tag1": "#صاف_کوڈ",
+      "tag2": "#ایل_ایل_ایم",
+      "tag3": "#مصنوعی_ذہانت",
+      "tag4": "#سائبر_سیکیورٹی",
+      "tag5": "#مائیکروٹک"
+    },
+    "contactSec": {
+      "title": "کیا آپ کا کوئی منصوبہ ہے؟",
+      "desc": "موبائل ایپس، کسٹم ایل ایل ایم ماڈلز یا مائیکروٹک نیٹ ورک و سیکیورٹی کے لیے ہم سے رابطہ کریں۔",
+      "email": "srebsoftware@gmail.com"
+    },
+    "footer": {
+      "brandDesc": "موبائل انجینئرنگ · ایل ایل ایم اور اے آئی · سائبر دفاع اور مائیکروٹک",
+      "navVakit": "وقت مرکزی",
+      "privacy": "رازداری کی پالیسی",
+      "contact": "رابطہ کریں",
+      "copy": "© 2026 SREBSoftware Studio. تمام حقوق محفوظ ہیں۔"
+    }
+  },
+  "bn": {
+    "metaTitle": "SREBSoftware · মোবাইল অ্যাপ, LLM ও এআই, সাইবার নিরাপত্তা",
+    "metaDesc": "SREBSoftware: উচ্চ-গতির মোবাইল অ্যাপ্লিকেশন, লার্জ ল্যাঙ্গুয়েজ মডেল (LLM), অন-ডিভাইস এআই, এবং MikroTik/Pentest সাইবার নিরাপত্তা।",
+    "nav": {
+      "pillars": "দক্ষতা",
+      "projects": "প্রকল্প",
+      "tech": "ক্ষমতা",
+      "languages": "ভাষা",
+      "about": "পরিচিতি",
+      "contact": "যোগাযোগ",
+      "flagshipBtn": "Vakit Merkezi"
+    },
+    "hero": {
+      "badge": "মোবাইল সফটওয়্যার · এআই ও LLM · সাইবার নিরাপত্তা ও MikroTik",
+      "titlePre": "মোবাইল, ",
+      "titleGrad": "LLM ও কৃত্রিম বুদ্ধিমত্তা",
+      "titlePost": "এবং সাইবার প্রতিরক্ষার মেলবন্ধন",
+      "lead": "আমরা উচ্চগতির Flutter মোবাইল অ্যাপ, বিশেষায়িত লার্জ ল্যাঙ্গুয়েজ মডেল (LLM), ডিভাইসে চলমান এআই এবং MikroTik সাইবার ডিফেন্সের সমন্বয়ে ভবিষ্যতের প্রযুক্তি গড়ে তুলছি।",
+      "btnProjects": "প্রকল্পসমূহ দেখুন",
+      "btnContact": "যোগাযোগ করুন",
+      "stat1Val": "LLM+",
+      "stat1Lbl": "বিশেষ LLM ও এআই",
+      "stat2Val": "SEC🛡️",
+      "stat2Lbl": "পেনটেস্টিং ও MikroTik",
+      "stat3Val": "১৮+",
+      "stat3Lbl": "লাইভ ইবাদত ফিচার",
+      "stat4Val": "৯",
+      "stat4Lbl": "বিশ্বব্যাপী ভাষা"
+    },
+    "pillarsSec": {
+      "tag": "মূল ইঞ্জিনিয়ারিং ক্ষেত্রসমূহ",
+      "title": "আমাদের দক্ষতার ক্ষেত্র",
+      "desc": "গতিশীল মোবাইল ডেভেলপমেন্ট, LLM ও এআই ইঞ্জিনিয়ারিং এবং শক্তিশালী সাইবার নিরাপত্তার সমন্বয়ে আধুনিক সমাধান।",
+      "p1Badge": "মোবাইল ইঞ্জিনিয়ারিং",
+      "p1Title": "ক্রস-প্ল্যাটফর্ম ও সর্বোচ্চ গতি",
+      "p1Desc": "Flutter ও Dart দিয়ে iOS ও Android-এর জন্য ৬০/১২০ এফপিএস গতিসম্পন্ন, মেমোরি লিকমুক্ত এবং অফলাইনে স্বয়ংসম্পূর্ণ মোবাইল অ্যাপ তৈরি করছি।",
+      "p1Tags": [
+        "Flutter & Dart",
+        "অফলাইন প্রথম",
+        "হ্যাপটিক ও মোশন",
+        "৯ ভাষা ও RTL"
+      ],
+      "p2Badge": "এআই ও LLM ডেভেলপমেন্ট",
+      "p2Title": "লার্জ ল্যাঙ্গুয়েজ মডেল ও অন-ডিভাইস এআই",
+      "p2Desc": "কর্পোরেট কাস্টম LLM তৈরি, ওপেন সোর্স মডেলে LoRA/QLoRA ফাইন টিউনিং, RAG ভেক্টর স্থাপত্য, স্বায়ত্তশাসিত এআই এজেন্ট এবং ডিভাইসেই নিরাপদে চলা এআই ইঞ্জিন।",
+      "p2Tags": [
+        "LLM ডেভেলপমেন্ট",
+        "LoRA ফাইন-টিউনিং",
+        "RAG ও ভেক্টর ডিবি",
+        "অন-ডিভাইস এআই",
+        "স্বায়ত্তশাসিত এজেন্ট"
+      ],
+      "p3Badge": "সাইবার নিরাপত্তা ও নেটওয়ার্ক",
+      "p3Title": "পেনটেস্টিং, MikroTik ও সুরক্ষা ব্যবস্থা",
+      "p3Desc": "ওয়েব, এপিআই এবং মোবাইল পেনটেস্টিং (Penetration Testing), রিভার্স ইঞ্জিনিয়ারিং, কোড অফাসকেশন, এবং MikroTik RouterOS ফায়ারওয়াল, VLAN ও WireGuard/IPsec VPN সুরক্ষা।",
+      "p3Tags": [
+        "পেনটেস্টিং",
+        "MikroTik RouterOS",
+        "ফায়ারওয়াল ও VLAN",
+        "WireGuard / IPsec",
+        "অ্যাপ হার্ডেনিং",
+        "ক্রিপ্টোগ্রাফি ও OWASP"
+      ]
+    },
+    "projectsSec": {
+      "tag": "আমাদের পোর্টফোলিও",
+      "title": "আমরা যা তৈরি করেছি",
+      "desc": "ব্যবহারকারীদের দৈনন্দিন জীবনকে সমৃদ্ধ করতে যত্ন সহকারে তৈরি ডিজিটাল সমাধান।",
+      "flagBadge": "✨ প্রধান পণ্য · গুগল প্লে-তে লাইভ",
+      "flagTitle": "Vakit Merkezi",
+      "flagDesc": "নির্ভুল নামাজের সময়, ৩০ পারা অডিও কুরআন তিলাওয়াত, লাইভ কিবলা কম্পাস, হ্যাপটিক তসবিহ কাউন্টার এবং ৮৪ দিনের ইবাদত ট্র্যাকার সমৃদ্ধ সম্পূর্ণ ইসলামিক অ্যাসিস্ট্যান্ট।",
+      "flagTags": [
+        "Flutter & Dart",
+        "৯ ভাষা ও RTL",
+        "সঠিক সময়সূচি",
+        "লাইভ কিবলা",
+        "৮৪ দিনের হিটম্যাপ",
+        "অ্যাডমব ও প্রো",
+        "সম্পূর্ণ অফলাইন"
+      ],
+      "flagBtnDetails": "প্রকল্পের বিস্তারিত পাতা",
+      "flagBtnPlay": "Google Play থেকে ডাউনলোড",
+      "lab1Badge": "🧠 আরঅ্যান্ডডি ও LLM ল্যাব · নির্মাণাধীন",
+      "lab1Title": "কর্পোরেট LLM ও অন-ডিভাইস এআই অ্যাসিস্ট্যান্ট",
+      "lab1Desc": "সংবেদনশীল তথ্যের জন্য ক্লাউডমুক্ত অন-ডিভাইস LLM ইঞ্জিন, RAG নলেজবেস এবং গোপনীয়তা বজায় রেখে স্বায়ত্তশাসিতভাবে কাজ করা এআই এজেন্ট।",
+      "lab1Tags": [
+        "কাস্টম LLM",
+        "RAG আর্কিটেকচার",
+        "এজ ইনফারেন্স",
+        "ক্লাউড লিক মুক্ত"
+      ],
+      "lab2Badge": "🛡️ নেটওয়ার্ক ও সাইবার ল্যাব · নির্মাণাধীন",
+      "lab2Title": "MikroTik নিরাপত্তা অটোমেশন শিল্ড",
+      "lab2Desc": "MikroTik RouterOS-এর জন্য স্বয়ংক্রিয় হুমকি প্রতিরোধ, ডায়নামিক আইপি ব্ল্যাকলিস্ট সিঙ্ক এবং জিরো-ট্রাস্ট ভিপিএন ম্যানেজমেন্ট টুল।",
+      "lab2Tags": [
+        "MikroTik RouterOS",
+        "পেনটেস্টিং টুলস",
+        "ফায়ারওয়াল অটোমেশন",
+        "জিরো-ট্রাস্ট"
+      ]
+    },
+    "techSec": {
+      "tag": "ইঞ্জিনিয়ারিং স্ট্যান্ডার্ড",
+      "title": "প্রযুক্তি ও আমাদের সক্ষমতা",
+      "desc": "আধুনিক প্রযুক্তির সমন্বয়ে তৈরি করি নির্ভরযোগ্য, বুদ্ধিমান এবং সুরক্ষিত সফটওয়্যার ব্যবস্থা।",
+      "t1Title": "লার্জ ল্যাঙ্গুয়েজ মডেল (LLM) ও RAG",
+      "t1Desc": "নিজস্ব ডেটাসেটে LLM ফাইন টিউনিং (LoRA/QLoRA), ভেক্টর ডেটাবেস (Chroma, Pinecone) এবং স্বায়ত্তশাসিত এআই মাল্টি-এজেন্ট ব্যবস্থা।",
+      "t2Title": "পেনিট্রেশন টেস্টিং (পেনটেস্টিং) ও অডিট",
+      "t2Desc": "ওয়েব, এপিআই এবং মোবাইল অ্যাপের সক্রিয় সুরক্ষা নিরীক্ষা, OWASP Top 10 মানদণ্ড এবং দুর্বলতা নিরসন।",
+      "t3Title": "নেটওয়ার্ক নিরাপত্তা ও MikroTik RouterOS",
+      "t3Desc": "MikroTik RouterOS ফায়ারওয়াল রুলস, প্যাকেট ম্যাংলিং, কঠোর VLAN নেটওয়ার্ক আইসোলেশন ও রাউটার সুরক্ষা।",
+      "t4Title": "ভিপিএন ও সুরক্ষিত টানেল (WireGuard)",
+      "t4Desc": "উচ্চগতির WireGuard, IPsec এবং OpenVPN টানেলের মাধ্যমে নিরাপদ জিরো-ট্রাস্ট রিমোট কানেক্টিভিটি।",
+      "t5Title": "অন-ডিভাইস এজ এআই (Edge AI)",
+      "t5Desc": "ছোট আকারের ভাষা মডেল (SLM) যা ব্যবহারকারীর তথ্য ডিভাইসের বাইরে না পাঠিয়ে অন-ডিভাইস কাজ করে।",
+      "t6Title": "অ্যাপ হার্ডেনিং ও অ্যান্টি-ট্যাম্পার",
+      "t6Desc": "কোড অফাসকেশন, রুট/জেলব্রেক শনাক্তকরণ, মেমোরি প্রোটেকশন এবং বাইনারি নিরাপত্তা নিশ্চিতকরণ।",
+      "t7Title": "ক্রিপ্টোগ্রাফি ও ডেটা সুরক্ষা",
+      "t7Desc": "AES-256 ও RSA এনক্রিপশন, SSL/TLS পিনিং এবং সুরক্ষিত মোবাইল কী-স্টোরেজ ব্যবস্থাপনা।",
+      "t8Title": "ক্রস-প্ল্যাটফর্ম মোবাইল (Flutter)",
+      "t8Desc": "একক কোডবেস দিয়ে iOS ও Android-এ ৬০/১২০ এফপিএস মসৃণ মোশন এবং মডুলার আর্কিটেকচার।"
+    },
+    "langSec": {
+      "tag": "বিশ্বব্যাপী বিস্তার",
+      "title": "৯টি ভাষায় উপলব্ধ",
+      "desc": "সারা বিশ্বের ব্যবহারকারীদের জন্য সম্পূর্ণ ডান-থেকে-বাম (RTL) সমর্থনসহ যত্ন সহকারে ডিজাইন করা।"
+    },
+    "aboutSec": {
+      "title": "পরিচ্ছন্ন, বুদ্ধিমান ও সুরক্ষিত সফটওয়্যার",
+      "desc": "SREBSoftware-এ আমাদের লক্ষ্য জটিল প্রযুক্তিকে সহজ, বুদ্ধিমান ও সম্পূর্ণ সুরক্ষিত অভিজ্ঞতায় রূপান্তর করা। গতি ও গোপনীয়তার সাথে আমরা কোনো আপস করি না।",
+      "tag1": "#ক্লিনকোড",
+      "tag2": "#LLMডেভেলপমেন্ট",
+      "tag3": "#কৃত্রিমবুদ্ধিমত্তা",
+      "tag4": "#সাইবারনিরাপত্তা",
+      "tag5": "#MikroTik"
+    },
+    "contactSec": {
+      "title": "আপনার কি কোনো প্রকল্প আছে?",
+      "desc": "মোবাইল অ্যাপ, কাস্টম LLM ও এআই মডেল বা MikroTik সাইবার নিরাপত্তা সহায়তার জন্য আমাদের সাথে সরাসরি যোগাযোগ করুন।",
+      "email": "srebsoftware@gmail.com"
+    },
+    "footer": {
+      "brandDesc": "মোবাইল ইঞ্জিনিয়ারিং · LLM ও এআই · সাইবার ডিফেন্স ও MikroTik",
+      "navVakit": "Vakit Merkezi",
+      "privacy": "গোপনীয়তা নীতি",
+      "contact": "যোগাযোগ",
+      "copy": "© 2026 SREBSoftware Studio. সর্বস্বত্ব সংরক্ষিত।"
+    }
+  },
+  "fr": {
+    "metaTitle": "SREBSoftware · Développement Mobile, LLM & IA, Cybersécurité",
+    "metaDesc": "SREBSoftware : Applications mobiles haute performance, Grands Modèles de Langage (LLM), IA sur l'appareil et solutions de cybersécurité MikroTik/Pentest.",
+    "nav": {
+      "pillars": "Expertises",
+      "projects": "Projets",
+      "tech": "Compétences",
+      "languages": "Langues",
+      "about": "À propos",
+      "contact": "Contact",
+      "flagshipBtn": "Vakit Merkezi"
+    },
+    "hero": {
+      "badge": "Ingénierie Mobile · IA & LLM · Cybersécurité & MikroTik",
+      "titlePre": "L'excellence Mobile, ",
+      "titleGrad": "LLM & Intelligence Artificielle",
+      "titlePost": "et Cyberdéfense",
+      "lead": "Nous concevons l'avenir numérique grâce à des applications Flutter ultra-fluides, des modèles de langage (LLM) affinés sur mesure, une IA embarquée sur l'appareil et des forteresses MikroTik et de test d'intrusion.",
+      "btnProjects": "Découvrir nos Projets",
+      "btnContact": "Nous Contacter",
+      "stat1Val": "LLM+",
+      "stat1Lbl": "LLM & IA sur Mesure",
+      "stat2Val": "SEC🛡️",
+      "stat2Lbl": "Pentesting & MikroTik",
+      "stat3Val": "18+",
+      "stat3Lbl": "Outils Spirituels Actifs",
+      "stat4Val": "9",
+      "stat4Lbl": "Langues Mondiales"
+    },
+    "pillarsSec": {
+      "tag": "DISCIPLINES FONDAMENTALES D'INGÉNIERIE",
+      "title": "Nos Domaines d'Expertise",
+      "desc": "Des solutions nouvelle génération créées au croisement du mobile haute performance, de l'ingénierie LLM & IA et de la cybersécurité proactive.",
+      "p1Badge": "INGÉNIERIE MOBILE",
+      "p1Title": "Multiplateforme & Performance Ultime",
+      "p1Desc": "Création d'applications iOS et Android avec Flutter & Dart fluides à 60/120 FPS, sans fuite de mémoire et conçues prioritairement hors ligne (offline-first).",
+      "p1Tags": [
+        "Flutter & Dart",
+        "Offline-First",
+        "Haptique & Motion",
+        "9 Langues & RTL"
+      ],
+      "p2Badge": "IA & DÉVELOPPEMENT LLM",
+      "p2Title": "Grands Modèles de Langage & IA Embarquée",
+      "p2Desc": "Développement de LLM d'entreprise sur mesure, fine-tuning LoRA/QLoRA sur modèles ouverts, architectures RAG vectorielles, agents IA autonomes et moteurs IA locaux sans fuite cloud.",
+      "p2Tags": [
+        "Développement LLM",
+        "Fine-Tuning LoRA",
+        "RAG & Vector DB",
+        "On-Device AI",
+        "Agents Autonomes"
+      ],
+      "p3Badge": "CYBERSÉCURITÉ & RÉSEAU",
+      "p3Title": "Pentesting, MikroTik & Cyberdéfense",
+      "p3Desc": "Tests d'intrusion web, API et mobiles (Pentesting), rétro-ingénierie, obfusquage de code, et segmentation réseau d'entreprise MikroTik RouterOS (VLAN, Firewall, VPN WireGuard/IPsec).",
+      "p3Tags": [
+        "Pentesting",
+        "MikroTik RouterOS",
+        "Firewall & VLAN",
+        "WireGuard / IPsec",
+        "Durcissement d'Apps",
+        "OWASP & Crypto"
+      ]
+    },
+    "projectsSec": {
+      "tag": "PORTFOLIO SÉLECTIONNÉ",
+      "title": "Nos Réalisations",
+      "desc": "Des produits numériques méticuleusement conçus pour apporter une valeur quotidienne tangible.",
+      "flagBadge": "✨ PRODUIT PHARE · EN LIGNE SUR GOOGLE PLAY",
+      "flagTitle": "Vakit Merkezi",
+      "flagDesc": "Compagnon spirituel tout-en-un : horaires de prière précis, récitation audio intégrale du Coran (30 Juz), boussole qibla en direct, chapelet tasbih à retour haptique et carte thermique de 84 jours.",
+      "flagTags": [
+        "Flutter & Dart",
+        "9 Langues & RTL",
+        "API Précise",
+        "Qibla en Direct",
+        "Heatmap 84 Jours",
+        "AdMob & IAP",
+        "Mode Hors Ligne"
+      ],
+      "flagBtnDetails": "Page Détaillée du Projet",
+      "flagBtnPlay": "Télécharger sur Google Play",
+      "lab1Badge": "🧠 R&D & LAB LLM · EN DÉVELOPPEMENT",
+      "lab1Title": "LLM d'Entreprise & Assistant IA sur l'Appareil",
+      "lab1Desc": "Moteur LLM local sécurisé pour les données d'entreprise sensibles, base de connaissances RAG vectorielle et agent IA autonome sans aucune fuite vers le cloud.",
+      "lab1Tags": [
+        "LLM sur Mesure",
+        "Architecture RAG",
+        "Inférence Locale",
+        "Zéro Fuite Cloud"
+      ],
+      "lab2Badge": "🛡️ LAB RÉSEAU & SÉCURITÉ · EN DÉVELOPPEMENT",
+      "lab2Title": "Bouclier d'Automatisation Sécuritaire MikroTik",
+      "lab2Desc": "Blocage automatisé des menaces pour MikroTik RouterOS, synchronisation dynamique des listes noires IP et gestion de VPN Zero-Trust.",
+      "lab2Tags": [
+        "MikroTik RouterOS",
+        "Outils de Pentest",
+        "Automatisation Firewall",
+        "Zero-Trust"
+      ]
+    },
+    "techSec": {
+      "tag": "STANDARDS D'INGÉNIERIE",
+      "title": "Technologies & Capacités",
+      "desc": "Mettre en œuvre les technologies modernes les plus performantes pour concevoir des systèmes résilients, intelligents et blindés.",
+      "t1Title": "Grands Modèles de Langage (LLM) & RAG",
+      "t1Desc": "Fine-tuning de LLM sur vos jeux de données (LoRA/QLoRA), bases vectorielles (Chroma, Pinecone) et agents IA multi-tâches.",
+      "t2Title": "Tests d'Intrusion (Pentesting) & Audit",
+      "t2Desc": "Audits de sécurité proactifs des applications web, mobiles et API, conformité OWASP Top 10 et résorption des vulnérabilités.",
+      "t3Title": "Sécurité Réseau & MikroTik RouterOS",
+      "t3Desc": "Filtrage avancé par pare-feu MikroTik RouterOS, marquage de paquets (Mangle), isolation stricte par VLAN et durcissement.",
+      "t4Title": "VPN & Tunnels Sécurisés (WireGuard)",
+      "t4Desc": "Tunnels haute performance WireGuard, IPsec et OpenVPN pour un accès distant sécurisé Zero-Trust.",
+      "t5Title": "IA sur l'Appareil (Edge AI)",
+      "t5Desc": "Modèles de langage légers (SLM) et NLP s'exécutant directement sur le processeur mobile sans exposer les données privées.",
+      "t6Title": "Durcissement d'Applications (App Hardening)",
+      "t6Desc": "Obfusquage du code, détection de root/jailbreak, neutralisation des hooks dynamiques et intégrité binaire.",
+      "t7Title": "Cryptographie & Protection des Données",
+      "t7Desc": "Chiffrement robuste AES-256 et RSA, SSL/TLS Certificate Pinning et stockage sécurisé des clés cryptographiques.",
+      "t8Title": "Développement Multiplateforme (Flutter)",
+      "t8Desc": "Une base de code unique pour iOS et Android délivrant une fluidité à 60/120 FPS et une architecture modulaire propre."
+    },
+    "langSec": {
+      "tag": "PORTÉE MONDIALE",
+      "title": "Disponible en 9 Langues",
+      "desc": "Conçu pour tous les utilisateurs avec un support complet et élégant des langues de droite à gauche (RTL)."
+    },
+    "aboutSec": {
+      "title": "Des Logiciels Purs, Intelligents et Fortifiés",
+      "desc": "Chez SREBSoftware, notre mission est de métamorphoser la technologie complexe en expériences fluides, intelligentes et inviolables, sans jamais transiger sur la vitesse et la confidentialité.",
+      "tag1": "#CodePropre",
+      "tag2": "#DevLLM",
+      "tag3": "#IntelligenceArtificielle",
+      "tag4": "#Cybersécurité",
+      "tag5": "#MikroTik"
+    },
+    "contactSec": {
+      "title": "Un Projet en Perspective ?",
+      "desc": "Contactez-nous pour vos besoins en applications mobiles, modèles LLM et IA sur mesure ou conseil en sécurité réseau MikroTik.",
+      "email": "srebsoftware@gmail.com"
+    },
+    "footer": {
+      "brandDesc": "Ingénierie Mobile · LLM & IA · Cyberdéfense & MikroTik",
+      "navVakit": "Vakit Merkezi",
+      "privacy": "Politique de Confidentialité",
+      "contact": "Contact",
+      "copy": "© 2026 SREBSoftware Studio. Tous droits réservés."
+    }
+  },
+  "de": {
+    "metaTitle": "SREBSoftware · Mobile Entwicklung, LLM & KI, Cybersicherheit",
+    "metaDesc": "SREBSoftware: Hochleistungs-Mobil-Apps, Large Language Models (LLM), On-Device KI und MikroTik/Pentest-Cybersicherheitslösungen.",
+    "nav": {
+      "pillars": "Expertise",
+      "projects": "Projekte",
+      "tech": "Fähigkeiten",
+      "languages": "Sprachen",
+      "about": "Über uns",
+      "contact": "Kontakt",
+      "flagshipBtn": "Vakit Merkezi"
+    },
+    "hero": {
+      "badge": "Mobile Software · KI & LLM · Cybersicherheit & MikroTik",
+      "titlePre": "Spitzentechnologie in Mobile, ",
+      "titleGrad": "LLM & Künstlicher Intelligenz",
+      "titlePost": "und Cyber-Verteidigung",
+      "lead": "Wir entwickeln die digitale Zukunft mit blitzschnellen Flutter-Apps, maßgeschneiderten Large Language Models (LLMs), On-Device-KI und MikroTik-Cybersicherheits- sowie Pentest-Schutzschilden.",
+      "btnProjects": "Projekte Entdecken",
+      "btnContact": "Kontakt Aufnehmen",
+      "stat1Val": "LLM+",
+      "stat1Lbl": "Eigene LLMs & KI",
+      "stat2Val": "SEC🛡️",
+      "stat2Lbl": "Pentesting & MikroTik",
+      "stat3Val": "18+",
+      "stat3Lbl": "Live-Andachtswerkzeuge",
+      "stat4Val": "9",
+      "stat4Lbl": "Globale Sprachen"
+    },
+    "pillarsSec": {
+      "tag": "KERNKOMPETENZEN DER ENTWICKLUNG",
+      "title": "Unsere Fachbereiche",
+      "desc": "Zukunftslösungen am Schnittpunkt von nativer mobiler Performance, LLM- & KI-Entwicklung und proaktiver Cyber-Abwehr.",
+      "p1Badge": "MOBILE ENTWICKLUNG",
+      "p1Title": "Plattformübergreifend & Höchstleistung",
+      "p1Desc": "Erstellung von iOS- und Android-Apps mit Flutter & Dart bei 60/120 FPS – ohne Speicherlecks, offline-fähig und mit nativer Performance.",
+      "p1Tags": [
+        "Flutter & Dart",
+        "Offline-First",
+        "Haptik & Animation",
+        "9 Sprachen & RTL"
+      ],
+      "p2Badge": "KI & LLM-ENTWICKLUNG",
+      "p2Title": "Large Language Models & On-Device-KI",
+      "p2Desc": "Entwicklung maßgeschneiderter Unternehmens-LLMs, LoRA/QLoRA Fine-Tuning für Open-Source-Modelle, RAG-Vektorarchitekturen, autonome KI-Agenten und On-Device-KI ohne Cloud-Datenabfluss.",
+      "p2Tags": [
+        "LLM-Entwicklung",
+        "LoRA Fine-Tuning",
+        "RAG & Vector DB",
+        "On-Device KI",
+        "Autonome Agenten"
+      ],
+      "p3Badge": "CYBERSICHERHEIT & NETZWERK",
+      "p3Title": "Pentesting, MikroTik & Abwehrsysteme",
+      "p3Desc": "Penetrationstests für Web, API und Mobile (Pentesting), Reverse Engineering, Code-Obfuskation sowie MikroTik RouterOS-Unternehmensnetzwerke (VLAN, Firewall, WireGuard/IPsec VPN).",
+      "p3Tags": [
+        "Pentesting",
+        "MikroTik RouterOS",
+        "Firewall & VLAN",
+        "WireGuard / IPsec",
+        "App-Härtung",
+        "OWASP & Krypto"
+      ]
+    },
+    "projectsSec": {
+      "tag": "AUSGEWÄHLTES PORTFOLIO",
+      "title": "Unsere Produkte",
+      "desc": "Präzise gestaltete digitale Lösungen, die Nutzern täglich echten Mehrwert bieten.",
+      "flagBadge": "✨ FLAGGSCHIFF · LIVE AUF GOOGLE PLAY",
+      "flagTitle": "Vakit Merkezi",
+      "flagDesc": "Der ganzheitliche spirituelle Begleiter: präzise Gebetszeiten, Audio-Koranrezitation über alle 30 Juz, Live-Qibla-Kompass, haptischer Tasbih-Zähler und 84-Tage-Ibadah-Heatmap.",
+      "flagTags": [
+        "Flutter & Dart",
+        "9 Sprachen & RTL",
+        "Präzise Zeiten",
+        "Live-Qibla",
+        "84-Tage-Heatmap",
+        "AdMob & IAP",
+        "Offline-Fähig"
+      ],
+      "flagBtnDetails": "Ausführliche Projektseite",
+      "flagBtnPlay": "Bei Google Play laden",
+      "lab1Badge": "🧠 F&E & LLM LAB · IN ENTWICKLUNG",
+      "lab1Title": "Unternehmens-LLM & On-Device KI-Assistent",
+      "lab1Desc": "Eine lokale, datenschutzkonforme LLM-Engine für sensible Unternehmensdaten, RAG-Wissensdatenbank und autonomer KI-Agent ohne Cloud-Verbindung.",
+      "lab1Tags": [
+        "Eigene LLMs",
+        "RAG-Architektur",
+        "Edge Inference",
+        "Zero-Cloud Leak"
+      ],
+      "lab2Badge": "🛡️ NETZWERK & SEC LAB · IN ENTWICKLUNG",
+      "lab2Title": "MikroTik & Sicherheits-Automationsschild",
+      "lab2Desc": "Automatisiertes Bedrohungsmanagement für MikroTik RouterOS, dynamischer IP-Blacklist-Abgleich und Zero-Trust VPN-Verwaltung.",
+      "lab2Tags": [
+        "MikroTik RouterOS",
+        "Pentest-Tools",
+        "Firewall-Automation",
+        "Zero-Trust"
+      ]
+    },
+    "techSec": {
+      "tag": "INGENIEURSSTANDARDS",
+      "title": "Technologien & Fähigkeiten",
+      "desc": "Wir nutzen modernste Software-Engineering-Werkzeuge für robuste, intelligente und gesicherte Systeme.",
+      "t1Title": "Large Language Models (LLM) & RAG",
+      "t1Desc": "Fine-Tuning eigener LLMs (LoRA/QLoRA), Vektordatenbanken (Chroma, Pinecone) für RAG und autonome KI-Multi-Agenten.",
+      "t2Title": "Penetrationstests (Pentesting) & Audit",
+      "t2Desc": "Proaktive Sicherheitsüberprüfungen für Web, API und Mobile Apps, OWASP Top 10-Konformität und Schwachstellenbehebung.",
+      "t3Title": "Netzwerksicherheit & MikroTik RouterOS",
+      "t3Desc": "Firewall-Filterung auf MikroTik RouterOS, Paket-Mangles, strikte VLAN-Segmentierung und Netzwerkhärtung.",
+      "t4Title": "VPN & Sichere Tunnel (WireGuard)",
+      "t4Desc": "Hochgeschwindigkeits-WireGuard-, IPsec- und OpenVPN-Tunnel für sicheren Zero-Trust-Fernzugriff.",
+      "t5Title": "On-Device Edge-KI",
+      "t5Desc": "Leichtgewichtige Sprachmodelle (SLM) und NLP direkt auf dem Mobilgerät ohne externe Datenübertragung.",
+      "t6Title": "App-Härtung & Anti-Tamper",
+      "t6Desc": "Code-Obfuskation, Root/Jailbreak-Erkennung, Speicher-Manipulationsschutz und binäre Integritätsprüfung.",
+      "t7Title": "Kryptographie & Datenschutz",
+      "t7Desc": "Starke AES-256- und RSA-Verschlüsselung, SSL/TLS Pinning und sichere mobile Schlüsselspeicherung.",
+      "t8Title": "Plattformübergreifendes Mobile (Flutter)",
+      "t8Desc": "Eine gemeinsame Codebasis für iOS und Android mit flüssigen 60/120 FPS und modularer Architektur."
+    },
+    "langSec": {
+      "tag": "GLOBALE REICHWEITE",
+      "title": "In 9 Sprachen verfügbar",
+      "desc": "Vollständig lokalisiert mit nativer Unterstützung für Rechts-nach-Links-Sprachen (RTL)."
+    },
+    "aboutSec": {
+      "title": "Klare, Intelligente und Gehärtete Software",
+      "desc": "Unsere Philosophie bei SREBSoftware ist es, komplexe Technologie in mühelose, hochintelligente und absolut sichere Erlebnisse zu verwandeln – ohne Kompromisse bei Tempo und Privatsphäre.",
+      "tag1": "#CleanCode",
+      "tag2": "#LLMEntwicklung",
+      "tag3": "#KünstlicheIntelligenz",
+      "tag4": "#Cybersicherheit",
+      "tag5": "#MikroTik"
+    },
+    "contactSec": {
+      "title": "Haben Sie ein Projekt vor?",
+      "desc": "Sprechen Sie uns an für mobile Apps, maßgeschneiderte LLMs / KI-Modelle oder MikroTik- und Cybersicherheitsberatung.",
+      "email": "srebsoftware@gmail.com"
+    },
+    "footer": {
+      "brandDesc": "Mobile Engineering · LLM & KI · Cyber-Verteidigung & MikroTik",
+      "navVakit": "Vakit Merkezi",
+      "privacy": "Datenschutzerklärung",
+      "contact": "Kontakt",
+      "copy": "© 2026 SREBSoftware Studio. Alle Rechte vorbehalten."
+    }
   }
-  window.addEventListener("resize", resize);
-  resize();
+};
+const RTL_LANGS = ["ar", "ur"];
 
-  window.addEventListener("mousemove", e => { mouse.x = e.clientX; mouse.y = e.clientY; });
-  window.addEventListener("mouseleave", () => { mouse.x = null; mouse.y = null; });
+const LANGS_LIST = [
+  ["tr", "Türkçe", "🇹🇷"],
+  ["en", "English", "🇬🇧"],
+  ["ar", "العربية", "🇸🇦"],
+  ["id", "Bahasa Indonesia", "🇮🇩"],
+  ["ms", "Bahasa Melayu", "🇲🇾"],
+  ["ur", "اردو", "🇵🇰"],
+  ["bn", "বাংলা", "🇧🇩"],
+  ["fr", "Français", "🇫🇷"],
+  ["de", "Deutsch", "🇩🇪"]
+];
 
-  for(let i=0; i<count; i++){
-    particles.push({
-      x: Math.random() * w,
-      y: Math.random() * h,
-      vx: (Math.random() - 0.5) * 0.55,
-      vy: (Math.random() - 0.5) * 0.55,
-      r: Math.random() * 1.8 + 0.8
+function getNested(obj, path) {
+  return path.split('.').reduce((prev, curr) => prev ? prev[curr] : null, obj);
+}
+
+function updateTags(containerId, tagList, accentCount = 1) {
+  const container = document.getElementById(containerId);
+  if (!container || !tagList) return;
+  container.innerHTML = "";
+  tagList.forEach((tagText, idx) => {
+    const span = document.createElement("span");
+    span.className = "tag" + (idx < accentCount ? " accent" : "");
+    span.textContent = tagText;
+    container.appendChild(span);
+  });
+}
+
+function renderChips(activeLang) {
+  const container = document.getElementById("langChips");
+  if (!container) return;
+  container.innerHTML = LANGS_LIST.map(([code, name, flag]) => 
+    '<button class="chip' + (code === activeLang ? ' active' : '') + '" data-l="' + code + '">' +
+      '<span>' + flag + '</span> ' + name +
+    '</button>'
+  ).join("");
+}
+
+function setLanguage(lang) {
+  if (!I18N[lang]) lang = "tr";
+  const data = I18N[lang];
+  localStorage.setItem("sreb_lang", lang);
+
+  document.documentElement.lang = lang;
+  document.documentElement.dir = RTL_LANGS.includes(lang) ? "rtl" : "ltr";
+
+  // Title & Metas
+  document.getElementById("pageTitle").textContent = data.metaTitle;
+  document.getElementById("pageMetaDesc").setAttribute("content", data.metaDesc);
+  const ogT = document.getElementById("ogTitle");
+  if (ogT) ogT.setAttribute("content", data.metaTitle);
+  const ogD = document.getElementById("ogDesc");
+  if (ogD) ogD.setAttribute("content", data.metaDesc);
+
+  // Text Nodes with data-t
+  document.querySelectorAll("[data-t]").forEach(el => {
+    const key = el.getAttribute("data-t");
+    const val = getNested(data, key);
+    if (val !== null && val !== undefined) {
+      el.textContent = val;
+    }
+  });
+
+  // Dynamic Tag Rows
+  if (data.pillarsSec) {
+    updateTags("p1TagRow", data.pillarsSec.p1Tags, 1);
+    updateTags("p2TagRow", data.pillarsSec.p2Tags, 2);
+    updateTags("p3TagRow", data.pillarsSec.p3Tags, 2);
+  }
+  if (data.projectsSec) {
+    updateTags("flagTagRow", data.projectsSec.flagTags, 2);
+    updateTags("lab1TagRow", data.projectsSec.lab1Tags, 0);
+    updateTags("lab2TagRow", data.projectsSec.lab2Tags, 0);
+  }
+
+  // Sync Select Dropdown in Navbar
+  const select = document.getElementById("langSelect");
+  if (select && select.value !== lang) {
+    select.value = lang;
+  }
+
+  // Render & Sync Interactive Chips in #diller Section
+  renderChips(lang);
+}
+
+// Event Listeners for Languages
+(function initLang() {
+  const saved = localStorage.getItem("sreb_lang");
+  const browser = (navigator.language || "tr").slice(0, 2).toLowerCase();
+  const initial = saved && I18N[saved] ? saved : (I18N[browser] ? browser : "tr");
+  
+  // Select Dropdown
+  const select = document.getElementById("langSelect");
+  if (select) {
+    select.addEventListener("change", (e) => setLanguage(e.target.value));
+  }
+
+  // Interactive Chips Click Delegation
+  const chipsContainer = document.getElementById("langChips");
+  if (chipsContainer) {
+    chipsContainer.addEventListener("click", (e) => {
+      const chip = e.target.closest(".chip");
+      if (chip && chip.dataset.l) {
+        setLanguage(chip.dataset.l);
+      }
     });
   }
 
-  function draw(){
-    ctx.clearRect(0, 0, w, h);
-    for(let i=0; i<particles.length; i++){
-      const p = particles[i];
-      p.x += p.vx; p.y += p.vy;
-      if(p.x < 0) p.x = w; else if(p.x > w) p.x = 0;
-      if(p.y < 0) p.y = h; else if(p.y > h) p.y = 0;
+  setLanguage(initial);
+})();
 
-      // Draw particle
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(52, 211, 153, 0.45)";
-      ctx.fill();
+/* -------------------------------------------------------------
+   Interactive HTML5 Constellation Particle Network
+---------------------------------------------------------------- */
+const canvas = document.getElementById('bgCanvas');
+const ctx = canvas.getContext('2d');
+let w, h;
+let particles = [];
+let mouse = { x: -9999, y: -9999, radius: 140 };
 
-      // Connect lines between close particles
-      for(let j=i+1; j<particles.length; j++){
-        const p2 = particles[j];
-        const dx = p.x - p2.x, dy = p.y - p2.y;
-        const dist = Math.sqrt(dx*dx + dy*dy);
-        if(dist < 110){
-          ctx.beginPath();
-          ctx.moveTo(p.x, p.y);
-          ctx.lineTo(p2.x, p2.y);
-          ctx.strokeStyle = `rgba(16, 185, 129, ${0.18 * (1 - dist/110)})`;
-          ctx.lineWidth = 0.8;
-          ctx.stroke();
-        }
-      }
+function resize() {
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', () => { resize(); initParticles(); });
+window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+window.addEventListener('mouseout', () => { mouse.x = -9999; mouse.y = -9999; });
 
-      // Connect to mouse
-      if(mouse.x !== null){
-        const mdx = p.x - mouse.x, mdy = p.y - mouse.y;
-        const mdist = Math.sqrt(mdx*mdx + mdy*mdy);
-        if(mdist < mouse.maxDist){
-          ctx.beginPath();
-          ctx.moveTo(p.x, p.y);
-          ctx.lineTo(mouse.x, mouse.y);
-          ctx.strokeStyle = `rgba(6, 182, 212, ${0.35 * (1 - mdist/mouse.maxDist)})`;
-          ctx.lineWidth = 1;
-          ctx.stroke();
-        }
+class Particle {
+  constructor() {
+    this.x = Math.random() * w;
+    this.y = Math.random() * h;
+    this.vx = (Math.random() - 0.5) * 0.45;
+    this.vy = (Math.random() - 0.5) * 0.45;
+    this.size = Math.random() * 1.8 + 0.8;
+    this.baseColor = Math.random() > 0.4 ? '16, 185, 129' : '6, 182, 212';
+    this.alpha = Math.random() * 0.5 + 0.2;
+  }
+  update() {
+    this.x += this.vx;
+    this.y += this.vy;
+    if (this.x < 0 || this.x > w) this.vx *= -1;
+    if (this.y < 0 || this.y > h) this.vy *= -1;
+
+    const dx = mouse.x - this.x;
+    const dy = mouse.y - this.y;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+    if (dist < mouse.radius) {
+      const force = (mouse.radius - dist) / mouse.radius;
+      this.x -= (dx / dist) * force * 2.2;
+      this.y -= (dy / dist) * force * 2.2;
+    }
+  }
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(" + this.baseColor + "," + this.alpha + ")";
+    ctx.fill();
+  }
+}
+
+function initParticles() {
+  particles = [];
+  const count = Math.min(Math.floor((w * h) / 13000), 100);
+  for (let i = 0; i < count; i++) {
+    particles.push(new Particle());
+  }
+}
+
+function connect() {
+  const maxDist = 125;
+  for (let a = 0; a < particles.length; a++) {
+    for (let b = a + 1; b < particles.length; b++) {
+      const dx = particles[a].x - particles[b].x;
+      const dy = particles[a].y - particles[b].y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < maxDist) {
+        const alpha = (1 - dist / maxDist) * 0.16;
+        ctx.strokeStyle = "rgba(16, 185, 129," + alpha + ")";
+        ctx.lineWidth = 0.8;
+        ctx.beginPath();
+        ctx.moveTo(particles[a].x, particles[a].y);
+        ctx.lineTo(particles[b].x, particles[b].y);
+        ctx.stroke();
       }
     }
-    requestAnimationFrame(draw);
   }
-  draw();
-})();
+}
+
+function animate() {
+  ctx.clearRect(0, 0, w, h);
+  particles.forEach(p => { p.update(); p.draw(); });
+  connect();
+  requestAnimationFrame(animate);
+}
+
+resize();
+initParticles();
+animate();
 </script>
 </body>
 </html>
